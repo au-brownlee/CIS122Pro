@@ -9,6 +9,7 @@ public class SelectionManager : MonoBehaviour
 {
 
     public GameObject interaction_Info_UI;
+    public int interaction_Distance = 10;
     TextMeshProUGUI interaction_text;
 
     private void Start()
@@ -20,7 +21,7 @@ public class SelectionManager : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, interaction_Distance))
         {
             var selectionTransform = hit.transform;
 
