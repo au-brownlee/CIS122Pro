@@ -27,8 +27,13 @@ public class SelectionManager : MonoBehaviour
 
             if (selectionTransform.GetComponent<InteractableObject>())
             {
-                interaction_text.text = selectionTransform.GetComponent<InteractableObject>().Interact();
+                InteractableObject obj = selectionTransform.GetComponent<InteractableObject>();
+                interaction_text.text = obj.GetItemText();
                 interaction_Info_UI.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    obj.Interact();
+                }
             }
             else
             {
