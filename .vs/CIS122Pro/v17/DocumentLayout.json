@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\Unity\\CIS122Pro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\mousemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\mousemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mousemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -40,9 +40,22 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractableObject.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\InteractableObject.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBQAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T00:37:02.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SelectionManager.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SelectionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SelectionManager.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SelectionManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SelectionManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAzwB4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:33:49.842Z",
               "EditorCaption": ""
             },
             {
@@ -59,19 +72,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SelectionManager.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SelectionManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SelectionManager.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SelectionManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SelectionManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwB0AAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T00:33:49.842Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MouseMovement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
@@ -80,8 +80,7 @@
               "RelativeToolTip": "Assets\\Scripts\\MouseMovement.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAmwBAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T22:54:42.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-09T22:54:42.446Z"
             },
             {
               "$type": "Document",
