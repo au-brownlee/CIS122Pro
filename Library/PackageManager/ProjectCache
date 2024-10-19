@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638648825402801200
+      ticks: 638648891190737809
     m_Hash: 88295716
   m_LockFileStatus:
     m_FilePath: C:/Users/User/Documents/GitHub/CIS122Pro/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638648825402811212
+      ticks: 638648891190747820
     m_Hash: 1884940714
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
