@@ -23,7 +23,7 @@
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\dragdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\dragdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dragdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\HidableOnButton.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\HidableOnButton.cs",
               "RelativeToolTip": "Assets\\Scripts\\HidableOnButton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-20T05:26:39.902Z",
               "EditorCaption": ""
@@ -71,8 +71,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ItemSlot.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAQwC8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:49:01.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T17:49:01.125Z"
             },
             {
               "$type": "Document",
@@ -84,8 +83,7 @@
               "RelativeToolTip": "Assets\\Scripts\\InventorySystem.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAADEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:48:24.351Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T17:48:24.351Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Assets\\Scripts\\DragDrop.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAgwC4AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:47:24.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-17T17:47:24.792Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Assets\\Scripts\\InteractableObject.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T00:37:02.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T00:37:02.293Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Assets\\Scripts\\SelectionManager.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwCAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T00:33:49.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-10T00:33:49.842Z"
             },
             {
               "$type": "Document",
