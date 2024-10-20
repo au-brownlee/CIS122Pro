@@ -221,6 +221,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4074332399339427780}
   - component: {fileID: 8296513961285835218}
+  - component: {fileID: 3383220391218858611}
+  - component: {fileID: 4644859332691151248}
   m_Layer: 0
   m_Name: SM_Rock_01
   m_TagString: Untagged
@@ -268,3 +270,40 @@ LODGroup:
     renderers:
     - renderer: {fileID: 1751531206059964433}
   m_Enabled: 1
+--- !u!136 &3383220391218858611
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088034624560197325}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4644859332691151248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7088034624560197325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c7bef9458a3bd40a888622337b392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemName: rock
+  Pickable: 1

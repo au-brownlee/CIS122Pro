@@ -355,6 +355,7 @@
 "Assets/Rabbits/Demo/Scripts/AnimatorParamatersChange.cs"
 "Assets/Scripts/AI_Movement.cs"
 "Assets/Scripts/DragDrop.cs"
+"Assets/Scripts/HidableOnButton.cs"
 "Assets/Scripts/InteractableObject.cs"
 "Assets/Scripts/InventorySystem.cs"
 "Assets/Scripts/ItemSlot.cs"
