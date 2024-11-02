@@ -12,6 +12,7 @@ public class InteractableObject : MonoBehaviour
         if (Pickable)
         {
             Debug.Log($"{GetItemName()} added to inventory");
+            InventorySystem.Instance.AddToInventory( ItemName );
             Destroy(gameObject);
         }
         return GetItemName();
