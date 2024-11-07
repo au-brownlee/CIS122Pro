@@ -199,8 +199,8 @@ Material:
     - _EnableFogOnTransparent: 1
     - _FadeBias: 0.01
     - _ForceForwardEmissive: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _GlossMapScale: 0.148
+    - _Glossiness: 0.053
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -256,11 +256,11 @@ Material:
     - SplatR: {r: 0, g: 0, b: 0, a: 0}
     - Terrain_Origin: {r: 0, g: 0, b: 0, a: 0}
     - Terrain_Scale: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 0.2682696, g: 0.31132078, b: 0.071956225, a: 1}
+    - _Color: {r: 0.28450835, g: 0.4056604, b: 0.09758811, a: 1}
     - _DiffusionProfileAsset: {r: -0.00000002060262, g: 7.3194675e-27, b: 69972056, a: -3.7115523e+9}
     - _Diffusion_Profile_Asset: {r: -0.00000002060262, g: 7.3194675e-27, b: 69972056, a: -3.7115523e+9}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
-    - _EmissionColor: {r: 0.3287421, g: 0.36320755, b: 0.018845676, a: 1}
+    - _EmissionColor: {r: 0.20880005, g: 0.3301887, b: 0.09812211, a: 1}
     - _SSSColor: {r: 0.6295641, g: 0.9622642, b: 0.28595585, a: 0}
     - _Subsurface_Scattering_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Thickness_Remap: {r: 0, g: 1, b: 0, a: 0}
