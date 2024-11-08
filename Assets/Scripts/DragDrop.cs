@@ -60,7 +60,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         if (transform.parent == transform.root)
         {
             InventorySystem.Instance.DropItem(gameObject);
-            Destroy(gameObject);
         }
 
         if (transform.parent == startParent)

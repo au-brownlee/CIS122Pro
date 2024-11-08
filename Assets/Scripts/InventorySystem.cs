@@ -95,37 +95,76 @@ public class InventorySystem : MonoBehaviour
             leftHandEmpty = false;
             leftHandVisual.transform.Find(leftHand.ItemName).gameObject.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (isOpen)
         {
-            if (isOpen)
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 Debug.Log("close inv");
                 inventoryScreenUI.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
                 isOpen = false;
             }
-            else
+        }
+        else if (!SpellSystem.Instance.isOpen)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
             {
                 Debug.Log("open inv");
                 inventoryScreenUI.SetActive(true);
                 Cursor.lockState = CursorLockMode.None;
                 isOpen = true;
             }
-        }
-        // crafting
-        if (Input.GetMouseButtonDown(0) && !isOpen)
-        {
-            if (!leftHandEmpty && !rightHandEmpty)
+            // crafting
+            if (Input.GetMouseButtonDown(1))
             {
-                if ((rightHand.ItemName == "stick" && leftHand.ItemName == "Crystall") || 
-                    (rightHand.ItemName == "Crystall" && leftHand.ItemName == "stick"))
+                if (!rightHandEmpty && !leftHandEmpty)
                 {
-                    Destroy(slotList[0].transform.GetChild(0).gameObject);
-                    Destroy(slotList[1].transform.GetChild(0).gameObject);
-                    NewItem("Wand", slotList[0]);
+                    if ((rightHand.ItemName == "stick" && leftHand.ItemName == "Crystall") ||
+                        (rightHand.ItemName == "Crystall" && leftHand.ItemName == "stick"))
+                    {
+                        Destroy(slotList[0].transform.GetChild(0).gameObject);
+                        Destroy(slotList[1].transform.GetChild(0).gameObject);
+                        NewItem("Wand", slotList[0]);
+                    }
+                }
+            }
+            // dropping
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (!rightHandEmpty) 
+                { 
+                    DropItem(slotList[0].transform.GetChild(0).gameObject); 
+                }
+                else if (!leftHandEmpty)
+                {
+                    DropItem(slotList[1].transform.GetChild(0).gameObject);
+                }
+            }
+            // using
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (!rightHandEmpty)
+                {
+                    if (rightHand.ItemName == "Wand")
+                    {
+                        SpellSystem.Instance.StartCast();
+                    }
                 }
             }
         }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                SpellSystem.Instance.EndCast();
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                SpellSystem.Instance.Discard();
+            }
+        }
+
+        
 
     }
 
@@ -183,6 +222,7 @@ public class InventorySystem : MonoBehaviour
 
     public void DropItem(GameObject ItemToDrop)
     {
+        
         string name = ItemToDrop.GetComponent<DragDrop>().ItemName;
         ItemToAdd = Instantiate(
             Resources.Load<GameObject>(name + "3d"),
@@ -190,5 +230,6 @@ public class InventorySystem : MonoBehaviour
             Focus.transform.rotation);
         ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
         ItemToAdd.transform.SetParent(WorldItems.transform);
+        Destroy(ItemToDrop.gameObject);
     }
 }

@@ -376,6 +376,7 @@
 "Assets/Scripts/MouseMovement.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/SelectionManager.cs"
+"Assets/Scripts/SpellSystem.cs"
 "Assets/Scripts/SummonChild.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
