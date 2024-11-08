@@ -7,6 +7,7 @@ TagManager:
   - Fire
   - Slot
   - Symbol
+  - Creature
   layers:
   - Default
   - TransparentFX

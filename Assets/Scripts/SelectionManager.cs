@@ -12,6 +12,8 @@ public class SelectionManager : MonoBehaviour
     public int interaction_Distance = 10;
     TextMeshProUGUI interaction_text;
 
+    public GameObject Target = null;
+
     private void Start()
     {
         interaction_text = interaction_Info_UI.GetComponent<TextMeshProUGUI>();
@@ -19,6 +21,8 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
+        if (InventorySystem.Instance.isOpen) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, interaction_Distance))
@@ -30,6 +34,7 @@ public class SelectionManager : MonoBehaviour
                 InteractableObject obj = selectionTransform.GetComponent<InteractableObject>();
                 interaction_text.text = obj.GetItemText();
                 interaction_Info_UI.SetActive(true);
+                Target = selectionTransform.gameObject;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     obj.Interact();
@@ -37,12 +42,14 @@ public class SelectionManager : MonoBehaviour
             }
             else
             {
+                Target = null;
                 interaction_Info_UI.SetActive(false);
             }
 
         }
         else
         {
+            Target = null;
             interaction_Info_UI.SetActive(false);
         }
     }

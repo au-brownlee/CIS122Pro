@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "D:\\Unity\\CIS122Pro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\spellsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\stateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\stateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\effect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\effect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\spellsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spellsystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\dragdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\itemslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemslot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\mousemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,24 +54,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Effect.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Effect.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Effect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:12:05.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "StatesEffects.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\StatesEffects.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StatesEffects.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\StatesEffects.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StatesEffects.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwC8AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T17:11:29.12Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SpellSystem.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpellSystem.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
               "RelativeToolTip": "Assets\\Scripts\\SpellSystem.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAmwDwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAswLgAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-08T05:19:43.767Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ItemSlot.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\ItemSlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemSlot.cs",
@@ -75,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "InventorySystem.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InventorySystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySystem.cs",
@@ -87,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "DragDrop.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\DragDrop.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DragDrop.cs",
@@ -99,31 +133,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "InteractableObject.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractableObject.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
               "RelativeToolTip": "Assets\\Scripts\\InteractableObject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-10T00:37:02.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "SelectionManager.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SelectionManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SelectionManager.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SelectionManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\SelectionManager.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T00:33:49.842Z"
+              "WhenOpened": "2024-10-10T00:33:49.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "AI_Movement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\AI_Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI_Movement.cs",
@@ -135,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "MouseMovement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MouseMovement.cs",
@@ -147,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",

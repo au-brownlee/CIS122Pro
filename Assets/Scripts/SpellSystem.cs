@@ -11,6 +11,19 @@ public class SpellSystem : MonoBehaviour
 
     public GameObject FireSpellUi;
 
+    public GameObject Player;
+
+    public GameObject Manager;
+
+    public GameObject Focus;
+
+    public GameObject FireSparcle;
+    public GameObject FireWave;
+    public GameObject FireBall;
+    public GameObject FirePlace;
+
+    public GameObject onFire;
+
     public bool isOpen;
 
     public List<GameObject> symbolList = new List<GameObject>();
@@ -112,8 +125,71 @@ public class SpellSystem : MonoBehaviour
 
     public void EndCast()
     {
-        FireSpellUi.SetActive(false);
-        isOpen = false;
+        bool hold = false;
+        bool power = false;
+        int time = 1;
+        bool specificTarget = false;
+        GameObject target = Manager.GetComponent<SelectionManager>().Target;
+        GameObject SpellTarget = null;
+        foreach (char sym in SpellText)
+        {
+            switch (sym)
+            {
+                case 'I': { hold = true; break; }
+                case ',': { power = true; break; }
+                case '^': { time = 2; break; }
+                case 'i': {
+                        specificTarget = true;
+                        SpellTarget = Player;
+                        break; }
+                case '*':
+                    {
+                        specificTarget = true;
+                        if (SpellTarget) break;
+                        if (target && target.GetComponent<InteractableObject>().Creature)
+                        {
+                            SpellTarget = target;
+                        }
+                        break;
+                    }
+                case '@':
+                    {
+                        specificTarget = true;
+                        if (SpellTarget) break;
+                        if (target && target.GetComponent<InteractableObject>().Pickable)
+                        {
+                            SpellTarget = target;
+                        }
+                        break;
+                    }
+            }
+        }
+        if (!SpellTarget)
+        {
+            if (specificTarget) { Discard(); return; }
+
+            GameObject newSpell = null;
+
+            if (hold && power) newSpell = FirePlace;
+            else if (hold) newSpell = FireWave;
+            else if (power) newSpell = FireBall;
+            else newSpell = FireSparcle;
+
+            var newChild = Instantiate(newSpell, Focus.transform.position, Focus.transform.rotation);
+            newChild.transform.parent = transform;
+        }
+        else
+        {
+            Debug.Log($"Cast on ({SpellTarget})");
+            StatesEffects state = SpellTarget.GetComponent<StatesEffects>();
+            if (!state) { Discard(); return; }
+            if (hold && power) state.effect("heat", 50, 1 * time);
+            else if (hold) state.effect("heat", 1, 20 * time);
+            else if (power) state.effect("heat", 10, 1 * time);
+            else state.effect("heat", 1, 1 * time);
+        }
+
+        Discard();
     }
 
     public void Discard()

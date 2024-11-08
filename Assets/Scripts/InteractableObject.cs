@@ -6,6 +6,7 @@ public class InteractableObject : MonoBehaviour
 {
     public string ItemName = "???";
     public bool Pickable = false;
+    public bool Creature = false;
 
     public string Interact()
     {
