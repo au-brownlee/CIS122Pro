@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,11 +16,16 @@ public class SpellSystem : MonoBehaviour
     public List<GameObject> symbolList = new List<GameObject>();
 
     int SymIndex = 0;
-    List<char> SpellText = new List<char>(6);
+    public List<char> SpellText = new List<char>(6) {' ', ' ', ' ', 
+                                                ' ', ' ', ' '};
 
     string Letters = " I,^i*@$";
 
     List<Sprite> SpellImages = new List<Sprite>() {null };
+
+
+    List<KeyCode> keys = new List<KeyCode>() { KeyCode.Alpha1,
+        KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6};
 
     private void Awake()
     {
@@ -56,21 +62,28 @@ public class SpellSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isOpen) return;
 
-        List<KeyCode> keys = new List<KeyCode>() { KeyCode.Alpha1,
-        KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6};
+        if (!isOpen) return;
+        if (SymIndex >= 6) return;
 
         for (int i = 0; i < keys.Count; i++)
         {
             if (Input.GetKeyDown(keys[i]))
             {
-                GameObject Symbol = symbolList[SymIndex].transform.Find("Symbol").gameObject;
-                Symbol.GetComponent<Image>().sprite = SpellImages[i];
-                //Debug.Log($"{SpellText}[{SymIndex}], {Letters}[{i}]");
-                //Debug.Log("ST: " + SpellText[SymIndex]);
-                //Debug.Log("L:" + Letters[i]);
-                SpellText[SymIndex] = Letters[i];
+                GameObject Symbol = null;
+
+                Symbol = symbolList[SymIndex].transform.Find("S" + (i + 1).ToString()).gameObject;
+                Symbol.SetActive(true);
+
+                symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
+                SpellText[SymIndex] = Letters[i + 1];
+                SymIndex++;
+                if (SymIndex >= 6)
+                {
+                    break;
+                }
+                symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
+                break;
             }
         }
         
@@ -81,12 +94,17 @@ public class SpellSystem : MonoBehaviour
     {
         FireSpellUi.SetActive(true);
         isOpen = true;
+        GameObject Symbol = null;
+        SymIndex = 0;
         foreach (GameObject symbol in symbolList)
         {
-            symbol.transform.Find("Symbol").gameObject.SetActive(false);
+            for (int j = 0; j < 6; j++)
+            {
+                Symbol = symbol.transform.Find("S" + (j + 1).ToString()).gameObject;
+                Symbol.SetActive(false);
+            }
             symbol.transform.Find("glow").gameObject.SetActive(false);
         }
-        SymIndex = 0;
         SpellText = new List<char>(6) {' ', ' ', ' ', 
                                        ' ', ' ', ' '};
         symbolList[0].transform.Find("glow").gameObject.SetActive(true);
