@@ -15,7 +15,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public static GameObject itemBeingDragged;
     Vector3 startPosition;
-    Transform startParent;
+    public Transform startParent;
 
 
 
@@ -57,7 +57,13 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
         itemBeingDragged = null;
 
-        if (transform.parent == startParent || transform.parent == transform.root)
+        if (transform.parent == transform.root)
+        {
+            InventorySystem.Instance.DropItem(gameObject);
+            Destroy(gameObject);
+        }
+
+        if (transform.parent == startParent)
         {
             transform.position = startPosition;
             transform.SetParent(startParent);

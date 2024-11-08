@@ -21,23 +21,21 @@ public class ItemSlot : MonoBehaviour, IDropHandler
         }
     }
 
-
-
-
-
-
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("OnDrop");
 
+        
         //if there is not item already then set our item.
-        if (!Item)
+        if (Item)
         {
-
-            DragDrop.itemBeingDragged.transform.SetParent(transform);
-            DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
+            GameObject myItem = transform.GetChild(0).gameObject;
+            myItem.transform.SetParent(DragDrop.itemBeingDragged.transform.GetComponent<DragDrop>().startParent);
+            myItem.transform.localPosition = new Vector2(0, 0);
 
         }
+        DragDrop.itemBeingDragged.transform.SetParent(transform);
+        DragDrop.itemBeingDragged.transform.localPosition = new Vector2(0, 0);
 
 
     }

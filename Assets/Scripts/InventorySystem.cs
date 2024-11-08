@@ -26,6 +26,9 @@ public class InventorySystem : MonoBehaviour
     public GameObject rightHandVisual;
     public GameObject leftHandVisual;
 
+    public GameObject Focus;
+    public GameObject WorldItems;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -75,8 +78,8 @@ public class InventorySystem : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
-        DragDrop rightHand = new DragDrop();
-        DragDrop leftHand = new DragDrop();
+        DragDrop rightHand = null;
+        DragDrop leftHand = null;
         bool rightHandEmpty = true;
         bool leftHandEmpty = true;
         if (!SlotIsEmpty(slotList[0]))
@@ -176,5 +179,16 @@ public class InventorySystem : MonoBehaviour
     private bool SlotIsEmpty(GameObject slot)
     {
         return slot.transform.childCount == 0;
+    }
+
+    public void DropItem(GameObject ItemToDrop)
+    {
+        string name = ItemToDrop.GetComponent<DragDrop>().ItemName;
+        ItemToAdd = Instantiate(
+            Resources.Load<GameObject>(name + "3d"),
+            Focus.transform.position,
+            Focus.transform.rotation);
+        ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
+        ItemToAdd.transform.SetParent(WorldItems.transform);
     }
 }
