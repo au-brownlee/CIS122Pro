@@ -9,7 +9,9 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
-    private CanvasGroup canvasGroup;
+    [SerializeField] private CanvasGroup canvasGroup;
+
+    public string ItemName = "???";
 
     public static GameObject itemBeingDragged;
     Vector3 startPosition;
