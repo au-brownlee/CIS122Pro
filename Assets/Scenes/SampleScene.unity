@@ -2745,7 +2745,7 @@ MonoBehaviour:
   FireSparcle: {fileID: 131920, guid: 8a23a06107e96134598493163a37174f, type: 3}
   FireWave: {fileID: 132746, guid: b86c5b2aa8096224886b7d41a74230ac, type: 3}
   FireBall: {fileID: 121802, guid: 8f18e1d8c46c51f429429815455062fc, type: 3}
-  FirePlace: {fileID: 198690, guid: 18faec2a14493684d905501076799765, type: 3}
+  FirePlace: {fileID: 198690, guid: 3d877b5417046444c8f98e969c63effa, type: 3}
   onFire: {fileID: 198690, guid: 288cb3db5a1804744bb6c2ba6adce6a4, type: 3}
   isOpen: 0
   symbolList: []

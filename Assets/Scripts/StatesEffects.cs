@@ -20,6 +20,8 @@ public class StatesEffects : MonoBehaviour
     public int Temperature;
     public List<Effect> effects = new List<Effect>();
 
+    public Dictionary<GameObject, Effect> areaEffects = new Dictionary<GameObject, Effect>();
+
     bool burning = false;
 
     private int nextUpdate = 0;
@@ -48,6 +50,8 @@ public class StatesEffects : MonoBehaviour
     void UpdateEffects()
     {
         List<Effect> toDelete = new List<Effect>();
+        List<Effect> allEffects = new List<Effect> (effects);
+        // allEffects.Add(areaEffects.Values);
         foreach (Effect effect in effects)
         {
             if (effect.Name == "heat")
@@ -111,5 +115,10 @@ public class StatesEffects : MonoBehaviour
     public void effect(string aName, int anAmount, int aDuration)
     {
         effects.Add(new Effect(aName, anAmount, aDuration));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
     }
 }
