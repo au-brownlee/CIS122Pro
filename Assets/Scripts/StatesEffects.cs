@@ -20,7 +20,7 @@ public class StatesEffects : MonoBehaviour
     public int Temperature;
     public List<Effect> effects = new List<Effect>();
 
-    public Dictionary<GameObject, Effect> areaEffects = new Dictionary<GameObject, Effect>();
+    public Dictionary<EffectGiver, Effect> areaEffects = new Dictionary<EffectGiver, Effect>();
 
     bool burning = false;
 
@@ -51,22 +51,34 @@ public class StatesEffects : MonoBehaviour
     {
         List<Effect> toDelete = new List<Effect>();
         List<Effect> allEffects = new List<Effect> (effects);
-        // allEffects.Add(areaEffects.Values);
-        foreach (Effect effect in effects)
+        allEffects.AddRange(areaEffects.Values);
+        foreach (Effect effect in allEffects)
         {
-            if (effect.Name == "heat")
+            Debug.Log($"{effect.Name} {effect.Amount}");
+            switch (effect.Name) {
+                case "heat":
+                    {
+                        Temperature += effect.Amount;
+                        break;
+                    }
+                case "regen":
+                    {
+                        Health += effect.Amount;
+                        break;
+                    }
+            }
+            effect.Duration -= 1;
+            if (effect.Duration == 0)
             {
-                Temperature += effect.Amount;
-                effect.Duration -= 1;
-                if (effect.Duration == 0)
-                {
-                    toDelete.Add(effect);
-                }
+                toDelete.Add(effect);
             }
         }
         foreach (Effect effect in toDelete)
         {
-            effects.Remove(effect);
+            if (effects.Contains(effect))
+            {
+                effects.Remove(effect);
+            }
         }
         if (Frost) Frost.SetActive(false);
         // Changes
@@ -119,6 +131,18 @@ public class StatesEffects : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        EffectGiver source = other.gameObject.GetComponent<EffectGiver>();
+        if (source)
+        {
+            areaEffects[source] = new Effect(source.EffectName, source.EffectAmount, 2);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        EffectGiver source = other.gameObject.GetComponent<EffectGiver>();
+        if (source && areaEffects.ContainsKey(source))
+        {
+            areaEffects.Remove(source);
+        }
     }
 }

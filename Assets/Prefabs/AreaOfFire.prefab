@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 403168}
   - component: {fileID: 19922014}
   - component: {fileID: 19818194}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: SmallFiresSparksParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4963,7 +4963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437396}
   - component: {fileID: 10880456}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: SmallFiresLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5058,7 +5058,7 @@ GameObject:
   - component: {fileID: 437804}
   - component: {fileID: 19963694}
   - component: {fileID: 19830650}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: SmallFiresSmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9777,7 +9777,7 @@ GameObject:
   - component: {fileID: 411110}
   - component: {fileID: 19809690}
   - component: {fileID: 19907964}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: SmallFiresParticleSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14576,7 +14576,7 @@ GameObject:
   m_Component:
   - component: {fileID: 429132}
   - component: {fileID: 8233310}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: SmallFiresSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14762,7 +14762,8 @@ GameObject:
   - component: {fileID: 2903363816934211079}
   - component: {fileID: 2925899932494994953}
   - component: {fileID: 6665050076021108808}
-  m_Layer: 8
+  - component: {fileID: 1264149945712273382}
+  m_Layer: 3
   m_Name: AreaOfFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14787,6 +14788,7 @@ Transform:
   - {fileID: 429132}
   - {fileID: 437804}
   - {fileID: 437396}
+  - {fileID: 8792655397971015023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &11426332
@@ -14845,8 +14847,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.4
+  m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.4, z: 0}
 --- !u!54 &2925899932494994953
@@ -14883,6 +14885,88 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0.4, z: 0}
+--- !u!114 &1264149945712273382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f990824461d9c44b980e0e90511cc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectName: heat
+  EffectAmount: 2
+--- !u!1 &7084925378738297629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8792655397971015023}
+  - component: {fileID: 4017389963617298992}
+  - component: {fileID: 2912835432281216896}
+  m_Layer: 3
+  m_Name: AreaOfDamage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8792655397971015023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084925378738297629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 458676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4017389963617298992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084925378738297629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f990824461d9c44b980e0e90511cc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectName: regen
+  EffectAmount: -3
+--- !u!135 &2912835432281216896
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7084925378738297629}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

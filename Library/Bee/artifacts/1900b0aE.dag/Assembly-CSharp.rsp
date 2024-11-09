@@ -371,6 +371,7 @@
 "Assets/Scripts/CaloriesBar.cs"
 "Assets/Scripts/DragDrop.cs"
 "Assets/Scripts/Effect.cs"
+"Assets/Scripts/EffectGiver.cs"
 "Assets/Scripts/GameItem.cs"
 "Assets/Scripts/HealthBar.cs"
 "Assets/Scripts/HidableOnButton.cs"

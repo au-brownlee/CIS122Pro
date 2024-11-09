@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8228610}
   - component: {fileID: 11462752}
   - component: {fileID: 11450262}
+  - component: {fileID: 6028060356115258777}
+  - component: {fileID: 4561547795074866887}
   m_Layer: 8
   m_Name: Fireball
   m_TagString: Untagged
@@ -333,10 +335,45 @@ MonoBehaviour:
   ProjectileDirection: {x: 0, y: 0, z: 1}
   ProjectileCollisionLayers:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967295
   ProjectileDestroyParticleSystemsOnCollision:
   - {fileID: 19810394}
   - {fileID: 19886674}
+--- !u!135 &6028060356115258777
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121802}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4561547795074866887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f990824461d9c44b980e0e90511cc82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EffectName: regen
+  EffectAmount: -50
 --- !u!1 &130866
 GameObject:
   m_ObjectHideFlags: 0
