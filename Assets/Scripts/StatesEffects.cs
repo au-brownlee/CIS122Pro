@@ -15,8 +15,8 @@ public class StatesEffects : MonoBehaviour
 
     public bool mortal = true;
 
-    int Health;
-    int Temperature;
+    public int Health;
+    public int Temperature;
     public List<Effect> effects = new List<Effect>();
 
     bool burning = false;
