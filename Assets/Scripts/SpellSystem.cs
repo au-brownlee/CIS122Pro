@@ -29,6 +29,8 @@ public class SpellSystem : MonoBehaviour
 
     public List<GameObject> symbolList = new List<GameObject>();
 
+    private GameObject CurrentWand = null;
+
     int SymIndex = 0;
     public List<char> SpellText = new List<char>(6) {' ', ' ', ' ', 
                                                 ' ', ' ', ' '};
@@ -104,8 +106,9 @@ public class SpellSystem : MonoBehaviour
 
     }
 
-    public void StartCast()
+    public void StartCast(GameObject wand)
     {
+        CurrentWand = wand;
         FireSpellUi.SetActive(true);
         NoteItems.SetActive(false);
         isOpen = true;
@@ -166,16 +169,33 @@ public class SpellSystem : MonoBehaviour
                     }
             }
         }
+        DragDrop WandItem = CurrentWand.GetComponent<DragDrop>();
         if (!SpellTarget)
         {
             if (specificTarget) { Discard(); return; }
 
             GameObject newSpell = null;
 
-            if (hold && power) newSpell = FirePlace;
-            else if (hold) newSpell = FireWave;
-            else if (power) newSpell = FireBall;
-            else newSpell = FireSparcle;
+            if (hold && power)
+            {
+                newSpell = FirePlace;
+                WandItem.ItemScore -= 40 * time;
+            }
+            else if (hold)
+            {
+                newSpell = FireWave;
+                WandItem.ItemScore -= 20 * time;
+            }
+            else if (power)
+            {
+                newSpell = FireBall;
+                WandItem.ItemScore -= 20 * time;
+            }
+            else
+            {
+                newSpell = FireSparcle;
+                WandItem.ItemScore -= 100 * time;
+            }
 
             var newChild = Instantiate(newSpell, Focus.transform.position, Focus.transform.rotation);
             newChild.transform.parent = transform;
@@ -185,10 +205,33 @@ public class SpellSystem : MonoBehaviour
             Debug.Log($"Cast on ({SpellTarget})");
             StatesEffects state = SpellTarget.GetComponent<StatesEffects>();
             if (!state) { Discard(); return; }
-            if (hold && power) state.effect("heat", 50, 1 * time);
-            else if (hold) state.effect("heat", 1, 20 * time);
-            else if (power) state.effect("heat", 10, 1 * time);
-            else state.effect("heat", 1, 1 * time);
+            if (hold && power)
+            {
+                state.effect("heat", 100, 1 * time);
+                WandItem.ItemScore -= 40 * time;
+            }
+            else if (hold)
+            {
+                state.effect("heat", 1, 20 * time);
+                WandItem.ItemScore -= 20 * time;
+            }
+            else if (power)
+            {
+                state.effect("heat", 20, 1 * time);
+                WandItem.ItemScore -= 20 * time;
+            }
+            else
+            {
+                state.effect("heat", 1, 1 * time);
+                WandItem.ItemScore -= 1 * time;
+            }
+        }
+
+        if (WandItem.ItemScore <= 0)
+        {
+            InventorySystem Inventory = InventorySystem.Instance;
+            Destroy(Inventory.RightHandItem);
+            Inventory.CreateNewItem("stick", 1, Inventory.RightHandSlot);
         }
 
         Discard();

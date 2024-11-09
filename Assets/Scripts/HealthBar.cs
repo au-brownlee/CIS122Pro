@@ -10,17 +10,17 @@ public class HelathBar : MonoBehaviour
 
     public GameObject playerState;
 
-    private float currentHealth, maxHealth;
+    private int currentHealth, maxHealth;
     void Awake() {
         slider = GetComponent<Slider>();
     }
 
     // Update is called once per frame
     void Update() {
-        currentHealth = playerState.GetComponent<PlayerState>().currentHealth;
-        maxHealth = playerState.GetComponent<PlayerState>().maxHealth;
+        currentHealth = playerState.GetComponent<StatesEffects>().Health;
+        maxHealth = playerState.GetComponent<StatesEffects>().MaxHealth;
 
-        float fillValue = currentHealth / maxHealth;  //used to calculate slider value to display health
+        float fillValue = (float)currentHealth / (float)maxHealth;  //used to calculate slider value to display health
         slider.value = fillValue;
 
         healthCounter.text = currentHealth + "/" + maxHealth;

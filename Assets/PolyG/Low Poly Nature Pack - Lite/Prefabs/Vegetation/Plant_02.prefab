@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8260414767725919869}
   - component: {fileID: 1023575641702348262}
   - component: {fileID: -5026261700112082543}
+  - component: {fileID: 4212055150125021275}
   m_Layer: 0
   m_Name: Plant_02
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: stick
   Pickable: 1
+  Creature: 0
 --- !u!136 &-5026261700112082543
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -71,6 +73,26 @@ CapsuleCollider:
   m_Height: 0.25
   m_Direction: 1
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &4212055150125021275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783775719428604326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5d68aa8806816418c8970725a37b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state_Info_UI: {fileID: 0}
+  deathScreen: {fileID: 0}
+  Frost: {fileID: 0}
+  MaxHealth: 20
+  MaxTemperature: 50
+  mortal: 1
+  Health: 0
+  Temperature: 0
 --- !u!1001 &7299673174315417759
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class InventorySystem : MonoBehaviour
 
     public List<GameObject> slotList = new List<GameObject>();
 
-    public List<String> ItemList = new List<String>();
-
     private GameObject ItemToAdd;
 
     private GameObject whatSlotToEquip;
@@ -29,6 +27,69 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject Focus;
     public GameObject WorldItems;
+
+    public GameObject RightHandSlot { 
+        get {
+            if (slotList.Count > 0)
+            {
+                return slotList[0];
+            }
+            return null;
+        } }
+    public GameObject LeftHandSlot {
+        get
+        {
+            if (slotList.Count > 1)
+            {
+                return slotList[1];
+            }
+            return null;
+        } }
+
+    public GameObject RightHandItem
+    {
+        get
+        {
+            if (!SlotIsEmpty(RightHandSlot))
+            {
+                return RightHandSlot.transform.GetChild(0).gameObject;
+            }
+            return null;
+        }
+    }
+    public GameObject LeftHandItem
+    {
+        get
+        {
+            if (!SlotIsEmpty(LeftHandSlot))
+            {
+                return LeftHandSlot.transform.GetChild(0).gameObject;
+            }
+            return null;
+        }
+    }
+    public DragDrop RightHandItemData
+    {
+        get
+        {
+            if (RightHandItem)
+            {
+                return RightHandItem.GetComponent<DragDrop>();
+            }
+            return null;
+        }
+    }
+    public DragDrop LeftHandItemData
+    {
+        get
+        {
+            if (LeftHandItem)
+            {
+                return LeftHandItem.GetComponent<DragDrop>();
+            }
+            return null;
+        }
+    }
 
     private void Awake()
     {
@@ -79,23 +140,8 @@ public class InventorySystem : MonoBehaviour
         {
             child.gameObject.SetActive(false);
         }
-        DragDrop rightHand = null;
-        DragDrop leftHand = null;
-        bool rightHandEmpty = true;
-        bool leftHandEmpty = true;
-        if (!SlotIsEmpty(slotList[0]))
-        {
-            rightHand = slotList[0].transform.GetChild(0).GetComponent<DragDrop>();
-            rightHandEmpty = false;
-            rightHandVisual.transform.Find(rightHand.ItemName).gameObject.SetActive(true);
-
-        }
-        if (!SlotIsEmpty(slotList[1]))
-        {
-            leftHand = slotList[1].transform.GetChild(0).GetComponent<DragDrop>();
-            leftHandEmpty = false;
-            leftHandVisual.transform.Find(leftHand.ItemName).gameObject.SetActive(true);
-        }
+        if (RightHandItem) rightHandVisual.transform.Find(RightHandItemData.ItemName).gameObject.SetActive(true);
+        if (LeftHandItem) leftHandVisual.transform.Find(LeftHandItemData.ItemName).gameObject.SetActive(true);
         if (isOpen)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
@@ -120,37 +166,37 @@ public class InventorySystem : MonoBehaviour
             // crafting
             if (Input.GetMouseButtonDown(1))
             {
-                if (!rightHandEmpty && !leftHandEmpty)
+                if (RightHandItem && LeftHandItem)
                 {
-                    if ((rightHand.ItemName == "stick" && leftHand.ItemName == "Crystall") ||
-                        (rightHand.ItemName == "Crystall" && leftHand.ItemName == "stick"))
+                    if ((RightHandItemData.ItemName == "stick" && LeftHandItemData.ItemName == "Crystall") ||
+                        (RightHandItemData.ItemName == "Crystall" && LeftHandItemData.ItemName == "stick"))
                     {
-                        Destroy(slotList[0].transform.GetChild(0).gameObject);
-                        Destroy(slotList[1].transform.GetChild(0).gameObject);
-                        NewItem("Wand", slotList[0]);
+                        Destroy(RightHandItem);
+                        Destroy(LeftHandItem);
+                        CreateNewItem("Wand", 100, slotList[0]);
                     }
                 }
             }
             // dropping
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                if (!rightHandEmpty) 
+                if (RightHandItem) 
                 { 
-                    DropItem(slotList[0].transform.GetChild(0).gameObject); 
+                    DropItem(RightHandItem); 
                 }
-                else if (!leftHandEmpty)
+                else if (LeftHandItem)
                 {
-                    DropItem(slotList[1].transform.GetChild(0).gameObject);
+                    DropItem(LeftHandItem);
                 }
             }
             // using
             if (Input.GetMouseButtonDown(0))
             {
-                if (!rightHandEmpty)
+                if (RightHandItem)
                 {
-                    if (rightHand.ItemName == "Wand")
+                    if (RightHandItemData.ItemName == "Wand")
                     {
-                        SpellSystem.Instance.StartCast();
+                        SpellSystem.Instance.StartCast(RightHandItem);
                     }
                 }
             }
@@ -171,7 +217,7 @@ public class InventorySystem : MonoBehaviour
 
     }
 
-    public bool AddToInventory(string ItemName)
+    public bool AddToInventory(GameObject Item)
     {
         if (CheckIfFull()) 
         {
@@ -180,18 +226,25 @@ public class InventorySystem : MonoBehaviour
             return false; 
         }
         whatSlotToEquip = FindNextEmptySlot();
-        NewItem(ItemName, whatSlotToEquip);
+        NewItem(Item, whatSlotToEquip);
         return true;
     }
 
-    private void NewItem(string ItemName, GameObject toSlot)
+    private void NewItem(GameObject ItemToAdd, GameObject toSlot)
     {
-        ItemToAdd = Instantiate(Resources.Load<GameObject>(ItemName),
+        string name = ItemToAdd.GetComponent<InteractableObject>().ItemName;
+        int score = ItemToAdd.GetComponent<InteractableObject>().ItemScore;
+        CreateNewItem(name, score, toSlot);
+    }
+
+    public void CreateNewItem(string name, int score, GameObject toSlot)
+    {
+        ItemToAdd = Instantiate(Resources.Load<GameObject>(name),
             toSlot.transform.position,
             toSlot.transform.rotation);
-        ItemToAdd.GetComponent<DragDrop>().ItemName = ItemName;
+        ItemToAdd.GetComponent<DragDrop>().ItemName = name;
+        ItemToAdd.GetComponent<DragDrop>().ItemScore = score;
         ItemToAdd.transform.SetParent(toSlot.transform);
-        ItemList.Add(ItemName);
     }
 
     private GameObject FindNextEmptySlot()
@@ -227,11 +280,13 @@ public class InventorySystem : MonoBehaviour
     {
         
         string name = ItemToDrop.GetComponent<DragDrop>().ItemName;
+        int score = ItemToDrop.GetComponent<DragDrop>().ItemScore;
         ItemToAdd = Instantiate(
             Resources.Load<GameObject>(name + "3d"),
             Focus.transform.position,
             Focus.transform.rotation);
         ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
+        ItemToAdd.GetComponent<InteractableObject>().ItemScore = score;
         ItemToAdd.transform.SetParent(WorldItems.transform);
         Destroy(ItemToDrop.gameObject);
     }

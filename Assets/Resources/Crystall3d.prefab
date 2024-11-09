@@ -112,6 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   Pickable: 1
+  Creature: 0
 --- !u!54 &4294995432494103244
 Rigidbody:
   m_ObjectHideFlags: 0

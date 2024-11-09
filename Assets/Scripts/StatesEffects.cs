@@ -7,6 +7,7 @@ public class StatesEffects : MonoBehaviour
 {
     public GameObject state_Info_UI;
     public GameObject deathScreen;
+    public GameObject Frost;
     TextMeshProUGUI state_text;
 
 
@@ -15,8 +16,8 @@ public class StatesEffects : MonoBehaviour
 
     public bool mortal = true;
 
-    int Health;
-    int Temperature;
+    public int Health;
+    public int Temperature;
     public List<Effect> effects = new List<Effect>();
 
     bool burning = false;
@@ -63,9 +64,11 @@ public class StatesEffects : MonoBehaviour
         {
             effects.Remove(effect);
         }
+        if (Frost) Frost.SetActive(false);
         // Changes
         if (Temperature <= 10)
         {
+            if (Frost) Frost.SetActive(true);
             Health -= 5;
         }
         if (MaxTemperature / 2 - 10 < Temperature && Temperature  <= MaxTemperature / 2 + 10)
@@ -84,6 +87,7 @@ public class StatesEffects : MonoBehaviour
         if (burning)
         {
             Health -= 7;
+            Temperature += 2;
         }
         // Fixes
         if (Temperature <= 0) Temperature = 0;
