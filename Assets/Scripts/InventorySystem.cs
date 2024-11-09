@@ -10,6 +10,7 @@ public class InventorySystem : MonoBehaviour
     public static InventorySystem Instance { get; set; }
 
     public GameObject inventoryScreenUI;
+    public GameObject NoteItems;
 
     public List<GameObject> slotList = new List<GameObject>();
 
@@ -101,6 +102,7 @@ public class InventorySystem : MonoBehaviour
             {
                 Debug.Log("close inv");
                 inventoryScreenUI.SetActive(false);
+                NoteItems.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
                 isOpen = false;
             }
@@ -111,6 +113,7 @@ public class InventorySystem : MonoBehaviour
             {
                 Debug.Log("open inv");
                 inventoryScreenUI.SetActive(true);
+                NoteItems.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
                 isOpen = true;
             }

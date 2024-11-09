@@ -6,10 +6,17 @@ using UnityEngine;
 public class StatesEffects : MonoBehaviour
 {
     public GameObject state_Info_UI;
+    public GameObject deathScreen;
     TextMeshProUGUI state_text;
 
-    public int Health = 50;
-    public int Temperature = 50;
+
+    public int MaxHealth = 50;
+    public int MaxTemperature = 100;
+
+    public bool mortal = true;
+
+    int Health;
+    int Temperature;
     public List<Effect> effects = new List<Effect>();
 
     bool burning = false;
@@ -19,7 +26,10 @@ public class StatesEffects : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Health = MaxHealth;
+        Temperature = MaxTemperature / 2;
         if (state_Info_UI) state_text = state_Info_UI.GetComponent<TextMeshProUGUI>();
+        if (!mortal) effects.Add(new Effect("heat", -1, -1));
     }
 
     // Update is called once per frame
@@ -43,7 +53,7 @@ public class StatesEffects : MonoBehaviour
             {
                 Temperature += effect.Amount;
                 effect.Duration -= 1;
-                if (effect.Duration <= 0)
+                if (effect.Duration == 0)
                 {
                     toDelete.Add(effect);
                 }
@@ -53,17 +63,16 @@ public class StatesEffects : MonoBehaviour
         {
             effects.Remove(effect);
         }
-        if (Temperature < 0) Temperature = 0;
-        if (Temperature > 100) Temperature = 100;
+        // Changes
         if (Temperature <= 10)
         {
             Health -= 5;
         }
-        if (Temperature <= 10)
+        if (MaxTemperature / 2 - 10 < Temperature && Temperature  <= MaxTemperature / 2 + 10)
         {
-            Health -= 3;
+            Health += 1;
         }
-        if (Temperature >= 90)
+        if (Temperature >= MaxTemperature - 10)
         {
             if (!burning)
             {
@@ -76,6 +85,23 @@ public class StatesEffects : MonoBehaviour
         {
             Health -= 7;
         }
+        // Fixes
+        if (Temperature <= 0) Temperature = 0;
+        if (Temperature >= MaxTemperature) Temperature = MaxTemperature;
+        if (Health <= 0)
+        {
+            Health = 0;
+            if (mortal)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                transform.position = new Vector3(0, -10000, 0);
+                deathScreen.SetActive(true);
+            }
+        }
+        if (Health >= MaxHealth) Health = MaxHealth;
     }
 
     public void effect(string aName, int anAmount, int aDuration)

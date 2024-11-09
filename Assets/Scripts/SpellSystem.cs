@@ -10,6 +10,7 @@ public class SpellSystem : MonoBehaviour
     public static SpellSystem Instance { get; set; }
 
     public GameObject FireSpellUi;
+    public GameObject NoteItems;
 
     public GameObject Player;
 
@@ -106,6 +107,7 @@ public class SpellSystem : MonoBehaviour
     public void StartCast()
     {
         FireSpellUi.SetActive(true);
+        NoteItems.SetActive(false);
         isOpen = true;
         GameObject Symbol = null;
         SymIndex = 0;
@@ -195,6 +197,7 @@ public class SpellSystem : MonoBehaviour
     public void Discard()
     {
         FireSpellUi.SetActive(false);
+        NoteItems.SetActive(true);
         isOpen = false;
     }
 
