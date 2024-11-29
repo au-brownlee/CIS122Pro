@@ -953,8 +953,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4186652312927835113}
   - {fileID: 2378236102252133511}
@@ -1059,6 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: rabbit
+  ItemScore: 0
   Pickable: 0
   Creature: 1
 --- !u!114 &1816387621719670450
@@ -1073,9 +1074,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5d68aa8806816418c8970725a37b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state_Info_UI: {fileID: 0}
+  deathScreen: {fileID: 0}
+  Frost: {fileID: 0}
+  MaxHealth: 50
+  MaxTemperature: 100
+  mortal: 1
   Health: 20
   Temperature: 50
-  effects: []
 --- !u!1 &8241164742382224044
 GameObject:
   m_ObjectHideFlags: 0
