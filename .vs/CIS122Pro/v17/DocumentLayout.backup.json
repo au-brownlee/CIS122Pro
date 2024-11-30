@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Unity\\CIS122Pro\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\inventory\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\gameover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\gameover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,24 +86,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "InventorySystem.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T03:23:27.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MouseMovement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\MouseMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\MouseMovement.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\MouseMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\MouseMovement.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-29T03:09:16.364Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "StatesEffects.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effects\\StatesEffects.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Effects\\StatesEffects.cs",
@@ -112,24 +133,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameOver.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs",
               "RelativeDocumentMoniker": "Assets\\GameOver.cs",
               "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs",
               "RelativeToolTip": "Assets\\GameOver.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-29T03:04:37.392Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TMP_SDF-Mobile.shader",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile.shader",
               "RelativeDocumentMoniker": "Assets\\TextMesh Pro\\Shaders\\TMP_SDF-Mobile.shader",
@@ -142,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DemoScriptEditor.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
               "RelativeDocumentMoniker": "Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
@@ -153,7 +170,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "EffectGiver.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\EffectGiver.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EffectGiver.cs",
@@ -165,7 +182,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Effect.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Effect.cs",
@@ -177,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "StatesEffects.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\StatesEffects.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StatesEffects.cs",
@@ -188,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "SpellSystem.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpellSystem.cs",
@@ -200,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ItemSlot.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\ItemSlot.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ItemSlot.cs",
@@ -212,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "InventorySystem.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InventorySystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySystem.cs",
@@ -224,7 +241,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "DragDrop.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\DragDrop.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DragDrop.cs",
@@ -236,7 +253,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "InteractableObject.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractableObject.cs",
@@ -248,7 +265,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PlayerState.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerState.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerState.cs",
@@ -260,7 +277,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "SpellEntity.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellEntity.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SpellEntity.cs",
@@ -272,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "AI_Movement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\AI_Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AI_Movement.cs",
@@ -284,7 +301,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "MouseMovement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MouseMovement.cs",
@@ -296,7 +313,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",

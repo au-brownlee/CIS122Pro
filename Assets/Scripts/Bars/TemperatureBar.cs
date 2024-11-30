@@ -10,7 +10,7 @@ public class TemperatureBar : MonoBehaviour
 
     public GameObject playerState;
 
-    private int currentHealth, maxHealth;
+    private float currentHealth, maxHealth;
     void Awake()
     {
         slider = GetComponent<Slider>();
@@ -25,6 +25,6 @@ public class TemperatureBar : MonoBehaviour
         float fillValue = (float)currentHealth / (float)maxHealth;  //used to calculate slider value to display health
         slider.value = fillValue;
 
-        healthCounter.text = currentHealth + "/" + maxHealth;
+        healthCounter.text = (int)currentHealth + "/" + (int)maxHealth;
     }
 }

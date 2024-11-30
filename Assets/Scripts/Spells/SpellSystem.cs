@@ -175,20 +175,28 @@ public class SpellSystem : MonoBehaviour
             if (specificTarget) { Discard(); return; }
 
             GameObject newSpell = null;
+            float energy = 1;
+            float heat = 1;
 
             if (hold && power)
             {
                 newSpell = FirePlace;
+                energy = 20;
+                heat = 2;
                 WandItem.ItemScore -= 40 * time;
             }
             else if (hold)
             {
                 newSpell = FireWave;
+                energy = 5;
+                heat = 4;
                 WandItem.ItemScore -= 20 * time;
             }
             else if (power)
             {
                 newSpell = FireBall;
+                energy = 20;
+                heat = 4;
                 WandItem.ItemScore -= 20 * time;
             }
             else
@@ -199,6 +207,8 @@ public class SpellSystem : MonoBehaviour
 
             var newChild = Instantiate(newSpell, Focus.transform.position, Focus.transform.rotation);
             newChild.transform.parent = transform;
+            newChild.GetComponent<SpellEntity>().energy = energy / time;
+            newChild.GetComponent<EffectGiver>().EffectAmount = heat * time;
         }
         else
         {
@@ -222,8 +232,8 @@ public class SpellSystem : MonoBehaviour
             }
             else
             {
-                state.effect("heat", 1, 1 * time);
-                WandItem.ItemScore -= 1 * time;
+                state.effect("heat", 2, 1 * time);
+                WandItem.ItemScore -= 2 * time;
             }
         }
 
@@ -231,7 +241,7 @@ public class SpellSystem : MonoBehaviour
         {
             InventorySystem Inventory = InventorySystem.Instance;
             Destroy(Inventory.RightHandItem);
-            Inventory.CreateNewItem("stick", 1, Inventory.RightHandSlot);
+            Inventory.CreateNewItem("stick", 1, 1, Inventory.RightHandSlot);
         }
 
         Discard();

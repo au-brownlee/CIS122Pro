@@ -319,6 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!4 &40046133 stripped
@@ -904,6 +905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &149437841
@@ -1102,6 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &174281305
@@ -1205,6 +1208,7 @@ RectTransform:
   - {fileID: 2146620527}
   - {fileID: 1752002720}
   - {fileID: 1417762312}
+  - {fileID: 457538005}
   - {fileID: 1184757914}
   - {fileID: 815186565}
   - {fileID: 414274229}
@@ -1696,7 +1700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236448097}
   - component: {fileID: 236448098}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1952,6 +1956,7 @@ MonoBehaviour:
   inventoryScreenUI: {fileID: 1184757913}
   PauseScreenUI: {fileID: 414274228}
   NoteItems: {fileID: 2000943194}
+  ManaBar: {fileID: 457538004}
   slotList: []
   isFull: 0
   isOpen: 0
@@ -2627,6 +2632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &418332045 stripped
@@ -2675,6 +2681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1001 &425664757
@@ -2818,6 +2825,95 @@ RectTransform:
   m_AnchoredPosition: {x: -0.22549438, y: -0.14789963}
   m_SizeDelta: {x: -0.451, y: -2.2289}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &457538004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457538005}
+  - component: {fileID: 457538007}
+  m_Layer: 5
+  m_Name: ManaBarContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &457538005
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457538004}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.4143, y: 2.4143, z: 2.4143}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1987354812}
+  - {fileID: 1602703176}
+  m_Father: {fileID: 174281309}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: 0}
+  m_SizeDelta: {x: 70.46375, y: 9.377201}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &457538007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457538004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 0
+  m_TargetGraphic: {fileID: 0}
+  m_FillRect: {fileID: 1293782188}
+  m_HandleRect: {fileID: 0}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &497365875 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2783775719428604326, guid: 98c560499a3dfdb44a9345920aa96b9f, type: 3}
@@ -4701,6 +4797,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 505150136346833364, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2601606107364377568, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.003012085
@@ -4781,9 +4881,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6852797787990927511, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
       propertyPath: m_Name
       value: Tutorial stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4644859332691151248, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
@@ -5082,6 +5190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: stick
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!4 &707920844 stripped
@@ -5896,6 +6005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &842462490
@@ -6183,6 +6293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 505150136346833364, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2601606107364377568, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.003012085
@@ -6263,9 +6377,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6852797787990927511, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
       propertyPath: m_Name
       value: Tutorial stone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4644859332691151248, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
@@ -6598,6 +6720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &905984516
@@ -6840,6 +6963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1001 &918188718
@@ -6850,6 +6974,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 505150136346833364, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2601606107364377568, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.003012085
@@ -6930,9 +7058,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6852797787990927511, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
       propertyPath: m_Name
       value: Tutorial stone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4644859332691151248, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
@@ -7341,6 +7477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &963194225
@@ -7931,6 +8068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &1072676914
@@ -8769,7 +8907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184679395}
   - component: {fileID: 1184679396}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9059,7 +9197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1185419684}
   - component: {fileID: 1185419685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Picture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9242,6 +9380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &1202944612
@@ -9578,6 +9717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1001 &1216225943
@@ -9822,8 +9962,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
+--- !u!1 &1293782187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1293782188}
+  - component: {fileID: 1293782190}
+  - component: {fileID: 1293782189}
+  m_Layer: 5
+  m_Name: Fill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1293782188
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293782187}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1602703176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.277359, y: -0.00013542175}
+  m_SizeDelta: {x: -1.314, y: 0.00025177}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1293782189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293782187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0.9474807, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1293782190
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293782187}
+  m_CullTransparentMesh: 1
 --- !u!1 &1294296780
 GameObject:
   m_ObjectHideFlags: 0
@@ -10750,6 +10966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: stick
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!136 &1399071169
@@ -11422,6 +11639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1001 &1526606786
@@ -11522,6 +11740,43 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8260414767725919869, guid: e47ee649d6192ae4c8702c7c95927c85, type: 3}
   m_PrefabInstance: {fileID: 559541051}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1602703175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1602703176}
+  m_Layer: 5
+  m_Name: Fill_Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1602703176
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602703175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1293782188}
+  - {fileID: 1728142251}
+  m_Father: {fileID: 457538005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.22549438, y: -0.14789963}
+  m_SizeDelta: {x: -0.451, y: -2.2289}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1641057919 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2783775719428604326, guid: 98c560499a3dfdb44a9345920aa96b9f, type: 3}
@@ -11720,6 +11975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!23 &1669190475
@@ -12215,6 +12471,85 @@ RectTransform:
   m_AnchoredPosition: {x: -0.22549438, y: -0.14789963}
   m_SizeDelta: {x: -0.451, y: -2.2289}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1728142250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1728142251}
+  - component: {fileID: 1728142253}
+  - component: {fileID: 1728142252}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1728142251
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728142250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1602703176}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.18905, y: -0.000028253}
+  m_SizeDelta: {x: 140.1, y: 7.1483}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1728142252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728142250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 7
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 111
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1728142253
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728142250}
+  m_CullTransparentMesh: 1
 --- !u!1 &1746833095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7088034624560197325, guid: 02323f354a4cb6343a4c4466e3cabdcb, type: 3}
@@ -12239,6 +12574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &1752002719
@@ -12489,6 +12825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1001 &1786456245
@@ -12596,6 +12933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &1793884281
@@ -13035,6 +13373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &1850237313 stripped
@@ -13083,6 +13422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1001 &1851207327
@@ -13182,6 +13522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!4 &1852504366 stripped
@@ -13669,6 +14010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: Crystall
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!1 &1968654860
@@ -14081,6 +14423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: stick
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!136 &1982884071
@@ -14106,6 +14449,81 @@ CapsuleCollider:
   m_Height: 1.6824684
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: -0.6}
+--- !u!1 &1987354811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987354812}
+  - component: {fileID: 1987354814}
+  - component: {fileID: 1987354813}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1987354812
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987354811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 457538005}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.22843933, y: -0.14925957}
+  m_SizeDelta: {x: 0.45691, y: -0.2985}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1987354813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987354811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.06132078, g: 0.06132078, b: 0.06132078, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1987354814
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987354811}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1990851679
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14396,6 +14814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!4 &2007340036 stripped
@@ -14548,6 +14967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rock
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!4 &2041238365 stripped
@@ -15447,6 +15867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: stick
   ItemScore: 1
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!136 &2110145841

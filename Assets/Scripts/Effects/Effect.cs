@@ -5,10 +5,10 @@ using UnityEngine;
 public class Effect
 {
     public string Name;
-    public int Amount;
-    public int Duration;
+    public float Amount;
+    public float Duration;
 
-    public Effect(string aName, int anAmount, int aDuration)
+    public Effect(string aName, float anAmount, float aDuration)
     {
         Name = aName;
         Amount = anAmount;

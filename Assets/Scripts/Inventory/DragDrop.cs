@@ -12,7 +12,8 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     [SerializeField] private CanvasGroup canvasGroup;
 
     public string ItemName = "???";
-    public int ItemScore = 1;
+    public float ItemScore = 1;
+    public float ItemMaxScore = 1;
 
     public static GameObject itemBeingDragged;
     Vector3 startPosition;

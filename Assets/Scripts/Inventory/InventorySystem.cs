@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class InventorySystem : MonoBehaviour
     public GameObject inventoryScreenUI;
     public GameObject PauseScreenUI;
     public GameObject NoteItems;
+    public GameObject ManaBar;
 
     public List<GameObject> slotList = new List<GameObject>();
 
@@ -144,7 +146,20 @@ public class InventorySystem : MonoBehaviour
         }
         if (RightHandItem) rightHandVisual.transform.Find(RightHandItemData.ItemName).gameObject.SetActive(true);
         if (LeftHandItem) leftHandVisual.transform.Find(LeftHandItemData.ItemName).gameObject.SetActive(true);
-        if (isOpen)
+
+        if (RightHandItem && RightHandItemData.ItemMaxScore > 1)
+        {
+            ManaBar.SetActive(true);
+            Slider slider = ManaBar.GetComponent<Slider>();
+            slider.maxValue = RightHandItemData.ItemMaxScore;
+            slider.value = RightHandItemData.ItemScore;
+        }
+        else
+        {
+            ManaBar.SetActive(false);
+        }
+
+            if (isOpen)
         {
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
@@ -192,7 +207,7 @@ public class InventorySystem : MonoBehaviour
                     {
                         Destroy(RightHandItem);
                         Destroy(LeftHandItem);
-                        CreateNewItem("Wand", 100, slotList[0]);
+                        CreateNewItem("Wand", 100, 100, slotList[0]);
                     }
                 }
             }
@@ -240,17 +255,19 @@ public class InventorySystem : MonoBehaviour
     private void NewItem(GameObject ItemToAdd, GameObject toSlot)
     {
         string name = ItemToAdd.GetComponent<InteractableObject>().ItemName;
-        int score = ItemToAdd.GetComponent<InteractableObject>().ItemScore;
-        CreateNewItem(name, score, toSlot);
+        float score = ItemToAdd.GetComponent<InteractableObject>().ItemScore;
+        float maxScore = ItemToAdd.GetComponent<InteractableObject>().ItemMaxScore;
+        CreateNewItem(name, score, maxScore, toSlot);
     }
 
-    public void CreateNewItem(string name, int score, GameObject toSlot)
+    public void CreateNewItem(string name, float score, float maxScore, GameObject toSlot)
     {
         ItemToAdd = Instantiate(Resources.Load<GameObject>(name),
             toSlot.transform.position,
             toSlot.transform.rotation);
         ItemToAdd.GetComponent<DragDrop>().ItemName = name;
         ItemToAdd.GetComponent<DragDrop>().ItemScore = score;
+        ItemToAdd.GetComponent<DragDrop>().ItemMaxScore = maxScore;
         ItemToAdd.transform.SetParent(toSlot.transform);
     }
 
@@ -287,13 +304,15 @@ public class InventorySystem : MonoBehaviour
     {
         
         string name = ItemToDrop.GetComponent<DragDrop>().ItemName;
-        int score = ItemToDrop.GetComponent<DragDrop>().ItemScore;
+        float score = ItemToDrop.GetComponent<DragDrop>().ItemScore;
+        float maxScore = ItemToDrop.GetComponent<DragDrop>().ItemMaxScore;
         ItemToAdd = Instantiate(
             Resources.Load<GameObject>(name + "3d"),
             Focus.transform.position,
             Focus.transform.rotation);
         ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
         ItemToAdd.GetComponent<InteractableObject>().ItemScore = score;
+        ItemToAdd.GetComponent<InteractableObject>().ItemMaxScore = maxScore;
         ItemToAdd.transform.SetParent(WorldItems.transform);
         Destroy(ItemToDrop.gameObject);
     }

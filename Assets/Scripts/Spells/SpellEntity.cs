@@ -5,8 +5,9 @@ using UnityEngine;
 public class SpellEntity : MonoBehaviour
 {
     private float nextUpdate = 0;
+    float deltaTime = 0.05f;
 
-    public int energy = 2;
+    public float energy = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +19,14 @@ public class SpellEntity : MonoBehaviour
     {
         if (Time.time >= nextUpdate)
         {
-            nextUpdate = Time.time + 1;
+            nextUpdate = Time.time + deltaTime;
             UpdateState();
         }
     }
 
     void UpdateState()
     {
-        energy -= 1;
+        energy -= deltaTime;
         if (energy <= 0)
         {
             Destroy(gameObject);

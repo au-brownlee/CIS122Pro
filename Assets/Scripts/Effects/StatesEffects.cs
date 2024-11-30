@@ -11,20 +11,21 @@ public class StatesEffects : MonoBehaviour
     TextMeshProUGUI state_text;
 
 
-    public int MaxHealth = 50;
-    public int MaxTemperature = 100;
+    public float MaxHealth = 50f;
+    public float MaxTemperature = 100f;
 
     public bool mortal = true;
 
-    public int Health;
-    public int Temperature;
+    public float Health;
+    public float Temperature;
     public List<Effect> effects = new List<Effect>();
 
     public Dictionary<EffectGiver, Effect> areaEffects = new Dictionary<EffectGiver, Effect>();
 
     bool burning = false;
 
-    private int nextUpdate = 0;
+    private float nextUpdate = 0;
+    private float deltaTime = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class StatesEffects : MonoBehaviour
     {
         if (Time.time >= nextUpdate)
         {
-            nextUpdate = Mathf.FloorToInt(Time.time) + 1;
+            nextUpdate = Time.time + deltaTime;
             UpdateEffects();
             if (state_text)  state_text.text = $"Health: {Health}\nTemperature: {Temperature}";
         }
@@ -51,24 +52,28 @@ public class StatesEffects : MonoBehaviour
     {
         List<Effect> toDelete = new List<Effect>();
         List<Effect> allEffects = new List<Effect> (effects);
-        allEffects.AddRange(areaEffects.Values);
+        foreach (EffectGiver EffectGiver in new List<EffectGiver>(areaEffects.Keys))
+        {
+            if (EffectGiver == null) areaEffects.Remove(EffectGiver);
+            else allEffects.Add(areaEffects[EffectGiver]);
+        }
         foreach (Effect effect in allEffects)
         {
             Debug.Log($"{effect.Name} {effect.Amount}");
             switch (effect.Name) {
                 case "heat":
                     {
-                        Temperature += effect.Amount;
+                        Temperature += effect.Amount * deltaTime;
                         break;
                     }
                 case "regen":
                     {
-                        Health += effect.Amount;
+                        Health += effect.Amount * deltaTime;
                         break;
                     }
             }
-            effect.Duration -= 1;
-            if (effect.Duration == 0)
+            effect.Duration -= deltaTime;
+            if (-1 < effect.Duration && effect.Duration <= 0)
             {
                 toDelete.Add(effect);
             }
@@ -82,16 +87,16 @@ public class StatesEffects : MonoBehaviour
         }
         if (Frost) Frost.SetActive(false);
         // Changes
-        if (Temperature <= 10)
+        if (Temperature <= MaxTemperature * 0.1)
         {
             if (Frost) Frost.SetActive(true);
-            Health -= 5;
+            Health -= 5 * deltaTime;
         }
-        if (MaxTemperature / 2 - 10 < Temperature && Temperature  <= MaxTemperature / 2 + 10)
+        if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6)
         {
-            Health += 1;
+            Health += 1 * deltaTime;
         }
-        if (Temperature >= MaxTemperature - 10)
+        if (Temperature >= MaxTemperature * 0.9)
         {
             if (!burning)
             {
@@ -102,8 +107,8 @@ public class StatesEffects : MonoBehaviour
         }
         if (burning)
         {
-            Health -= 7;
-            Temperature += 2;
+            Health -= 7 * deltaTime;
+            Temperature += 2 * deltaTime;
         }
         // Fixes
         if (Temperature <= 0) Temperature = 0;
@@ -124,7 +129,7 @@ public class StatesEffects : MonoBehaviour
         if (Health >= MaxHealth) Health = MaxHealth;
     }
 
-    public void effect(string aName, int anAmount, int aDuration)
+    public void effect(string aName, float anAmount, float aDuration)
     {
         effects.Add(new Effect(aName, anAmount, aDuration));
     }

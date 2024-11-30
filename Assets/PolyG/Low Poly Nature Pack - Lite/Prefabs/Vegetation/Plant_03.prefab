@@ -48,8 +48,8 @@ MonoBehaviour:
   state_Info_UI: {fileID: 0}
   deathScreen: {fileID: 0}
   Frost: {fileID: 0}
-  MaxHealth: 20
-  MaxTemperature: 50
+  MaxHealth: 40
+  MaxTemperature: 20
   mortal: 1
   Health: 0
   Temperature: 0

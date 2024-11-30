@@ -5,5 +5,5 @@ using UnityEngine;
 public class EffectGiver : MonoBehaviour
 {
     public string EffectName;
-    public int EffectAmount;
+    public float EffectAmount;
 }

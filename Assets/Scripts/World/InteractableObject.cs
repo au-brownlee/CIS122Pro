@@ -5,15 +5,17 @@ using UnityEngine;
 public class InteractableObject : MonoBehaviour
 {
     public string ItemName = "???";
-    public int ItemScore = 1;
+    public float ItemScore = 1;
+    public float ItemMaxScore = 1;
     public bool Pickable = false;
     public bool Creature = false;
     
 
-    public InteractableObject(string itemName, int itemScore, bool pickable, bool creature)
+    public InteractableObject(string itemName, float itemScore, float itemMaxScore, bool pickable, bool creature)
     {
         ItemName = itemName;
         ItemScore = itemScore;
+        ItemMaxScore = itemMaxScore;
         Pickable = pickable;
         Creature = creature;
     }

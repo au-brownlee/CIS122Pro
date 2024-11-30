@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: stick
+  ItemScore: 0
   Pickable: 1
   Creature: 0
 --- !u!136 &4766401955783622114
@@ -307,8 +308,8 @@ MonoBehaviour:
   state_Info_UI: {fileID: 0}
   deathScreen: {fileID: 0}
   Frost: {fileID: 0}
-  MaxHealth: 10
-  MaxTemperature: 50
+  MaxHealth: 20
+  MaxTemperature: 20
   mortal: 1
   Health: 0
   Temperature: 0
