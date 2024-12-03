@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class SpellSystem : MonoBehaviour
     public GameObject FireWave;
     public GameObject FireBall;
     public GameObject FirePlace;
+    public GameObject FireExplode;
 
     public GameObject onFire;
 
@@ -32,10 +34,12 @@ public class SpellSystem : MonoBehaviour
     private GameObject CurrentWand = null;
 
     int SymIndex = 0;
-    public List<char> SpellText = new List<char>(6) {' ', ' ', ' ', 
-                                                ' ', ' ', ' '};
 
-    string Letters = " I,^i*@$";
+    public enum SpellSym {NONE, HOLD, POWER, TIME, ME, CREATURE, ITEM}
+    static List<SpellSym> EmptySpellText = new List<SpellSym>(6) {SpellSym.NONE, SpellSym.NONE, SpellSym.NONE,
+                                                SpellSym.NONE, SpellSym.NONE, SpellSym.NONE};
+
+    public List<SpellSym> SpellText = new List<SpellSym>(EmptySpellText);
 
     List<Sprite> SpellImages = new List<Sprite>() {null };
 
@@ -92,7 +96,7 @@ public class SpellSystem : MonoBehaviour
                 Symbol.SetActive(true);
 
                 symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
-                SpellText[SymIndex] = Letters[i + 1];
+                SpellText[SymIndex] = (SpellSym)(i + 1);
                 SymIndex++;
                 if (SymIndex >= 6)
                 {
@@ -123,8 +127,7 @@ public class SpellSystem : MonoBehaviour
             }
             symbol.transform.Find("glow").gameObject.SetActive(false);
         }
-        SpellText = new List<char>(6) {' ', ' ', ' ', 
-                                       ' ', ' ', ' '};
+        SpellText = new List<SpellSym>(EmptySpellText);
         symbolList[0].transform.Find("glow").gameObject.SetActive(true);
     }
 
@@ -136,18 +139,18 @@ public class SpellSystem : MonoBehaviour
         bool specificTarget = false;
         GameObject target = Manager.GetComponent<SelectionManager>().Target;
         GameObject SpellTarget = null;
-        foreach (char sym in SpellText)
+        foreach (SpellSym sym in SpellText)
         {
             switch (sym)
             {
-                case 'I': { hold = true; break; }
-                case ',': { power = true; break; }
-                case '^': { time = 2; break; }
-                case 'i': {
+                case SpellSym.HOLD: { hold = true; break; }
+                case SpellSym.POWER: { power = true; break; }
+                case SpellSym.TIME: { time = 2; break; }
+                case SpellSym.ME: {
                         specificTarget = true;
                         SpellTarget = Player;
                         break; }
-                case '*':
+                case SpellSym.CREATURE:
                     {
                         specificTarget = true;
                         if (SpellTarget) break;
@@ -157,7 +160,7 @@ public class SpellSystem : MonoBehaviour
                         }
                         break;
                     }
-                case '@':
+                case SpellSym.ITEM:
                     {
                         specificTarget = true;
                         if (SpellTarget) break;
@@ -180,29 +183,29 @@ public class SpellSystem : MonoBehaviour
 
             if (hold && power)
             {
-                newSpell = FirePlace;
-                energy = 20;
-                heat = 2;
-                WandItem.ItemScore -= 40 * time;
+                newSpell = FireExplode;
+                energy = 1;
+                heat = -200; // (damage)
+                WandItem.ItemScore -= 200;
             }
             else if (hold)
             {
-                newSpell = FireWave;
-                energy = 5;
-                heat = 4;
-                WandItem.ItemScore -= 20 * time;
+                newSpell = FirePlace;
+                energy = 20;
+                heat = 2;
+                WandItem.ItemScore -= 20;
             }
             else if (power)
             {
                 newSpell = FireBall;
                 energy = 20;
                 heat = 4;
-                WandItem.ItemScore -= 20 * time;
+                WandItem.ItemScore -= 20;
             }
             else
             {
-                newSpell = FireSparcle;
-                WandItem.ItemScore -= 1 * time;
+                newSpell = FireSparcle; 
+                WandItem.ItemScore -= 2;
             }
 
             var newChild = Instantiate(newSpell, Focus.transform.position, Focus.transform.rotation);
@@ -217,23 +220,23 @@ public class SpellSystem : MonoBehaviour
             if (!state) { Discard(); return; }
             if (hold && power)
             {
-                state.effect("heat", 100, 1 * time);
-                WandItem.ItemScore -= 40 * time;
+                state.effect("heat", 200 / time, 1 * time);
+                WandItem.ItemScore -= 200;
             }
             else if (hold)
             {
-                state.effect("heat", 1, 20 * time);
-                WandItem.ItemScore -= 20 * time;
+                state.effect("heat", 1 / time, 20 * time);
+                WandItem.ItemScore -= 20;
             }
             else if (power)
             {
-                state.effect("heat", 20, 1 * time);
-                WandItem.ItemScore -= 20 * time;
+                state.effect("heat", 40 / time, 0.5f * time);
+                WandItem.ItemScore -= 20;
             }
             else
             {
-                state.effect("heat", 2, 1 * time);
-                WandItem.ItemScore -= 2 * time;
+                state.effect("heat", 4 / time, 0.5f * time);
+                WandItem.ItemScore -= 2;
             }
         }
 
