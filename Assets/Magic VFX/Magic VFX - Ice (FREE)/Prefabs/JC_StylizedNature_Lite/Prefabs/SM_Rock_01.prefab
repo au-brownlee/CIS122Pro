@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 975660985502538798}
   - component: {fileID: 3223588787500812158}
   - component: {fileID: 1751531206059964433}
-  - component: {fileID: 7617851576497350561}
   m_Layer: 0
   m_Name: SM_Rock_01_LOD1
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7617851576497350561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 505150136346833364}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.47122955, y: 0.6658225, z: 0.4545058}
-  m_Center: {x: 0.009060688, y: 0.055079907, z: -0.0005090013}
 --- !u!1 &6852797787990927511
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +267,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.28
+  m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4644859332691151248
@@ -306,4 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: rock
+  ItemScore: 0
+  ItemMaxScore: 0
   Pickable: 1
+  Creature: 0
