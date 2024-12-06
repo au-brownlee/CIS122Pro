@@ -15,6 +15,7 @@ public class InventorySystem : MonoBehaviour
     public GameObject PauseScreenUI;
     public GameObject NoteItems;
     public GameObject ManaBar;
+    public GameObject deathScreenUI;
 
     public List<GameObject> slotList = new List<GameObject>();
 
@@ -32,6 +33,12 @@ public class InventorySystem : MonoBehaviour
     public GameObject Focus;
     public GameObject WorldItems;
 
+    internal PauseScreen pauseComponent;
+    internal GameOver gameOverComponent;
+
+    // gets and sets
+
+    public bool canInteract { get { return !isOpen && !pauseComponent.paused && !gameOverComponent.isOver; } }
     public GameObject RightHandSlot { 
         get {
             if (slotList.Count > 0)
@@ -113,6 +120,9 @@ public class InventorySystem : MonoBehaviour
         isOpen = false;
         isFull = false;
 
+        pauseComponent = PauseScreenUI.GetComponent<PauseScreen>();
+        gameOverComponent = deathScreenUI.GetComponent<GameOver>();
+
         PopulateSLotList();
     }
 
@@ -132,7 +142,6 @@ public class InventorySystem : MonoBehaviour
             }
         }
     }
-
 
     void Update()
     {
@@ -159,7 +168,15 @@ public class InventorySystem : MonoBehaviour
             ManaBar.SetActive(false);
         }
 
-            if (isOpen)
+        if (gameOverComponent.isOver) 
+        {
+            if (Input.GetKeyDown(KeyCode.Escape)) gameOverComponent.RestartButton();
+        }
+        else if (pauseComponent.paused)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape)) pauseComponent.UnPause();
+        }
+        else if (isOpen)
         {
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
@@ -174,7 +191,11 @@ public class InventorySystem : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                SpellSystem.Instance.EndCast();
+                SpellSystem.Instance.Press();
+            }
+            else if (Input.GetMouseButtonUp(0))
+            {
+                SpellSystem.Instance.UnPress();
             }
             if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Escape))
             {
@@ -191,12 +212,7 @@ public class InventorySystem : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 isOpen = true;
             }
-            if (Input.GetKeyDown(KeyCode.Escape)) {
-                PauseScreen pause = PauseScreenUI.GetComponent<PauseScreen>();
-                pause.paused = !pause.paused;
-                if (pause.paused) pause.Pause();
-                else pause.UnPause();
-            }
+            if (Input.GetKeyDown(KeyCode.Escape)) pauseComponent.Pause();
             // crafting
             if (Input.GetMouseButtonDown(1))
             {

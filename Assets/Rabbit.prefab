@@ -932,10 +932,10 @@ GameObject:
   - component: {fileID: 3265856720996288589}
   - component: {fileID: 7310643120944998936}
   - component: {fileID: -6292226933827930686}
-  - component: {fileID: 2794387460809954606}
   - component: {fileID: 4801533405625569244}
   - component: {fileID: 3813160875110400079}
   - component: {fileID: 1816387621719670450}
+  - component: {fileID: 6797653572863131670}
   m_Layer: 0
   m_Name: Rabbit
   m_TagString: Untagged
@@ -1009,27 +1009,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 0
---- !u!65 &2794387460809954606
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8137841526832358186}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4801533405625569244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,6 +1025,7 @@ MonoBehaviour:
   walkCounter: 0
   waitCounter: 0
   isWalking: 0
+  isDead: 0
 --- !u!114 &3813160875110400079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,6 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemName: rabbit
   ItemScore: 0
+  ItemMaxScore: 0
   Pickable: 0
   Creature: 1
 --- !u!114 &1816387621719670450
@@ -1077,11 +1058,35 @@ MonoBehaviour:
   state_Info_UI: {fileID: 0}
   deathScreen: {fileID: 0}
   Frost: {fileID: 0}
+  MyFire: {fileID: 0}
   MaxHealth: 20
   MaxTemperature: 50
   mortal: 1
   Health: 20
   Temperature: 50
+--- !u!136 &6797653572863131670
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137841526832358186}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &8241164742382224044
 GameObject:
   m_ObjectHideFlags: 0

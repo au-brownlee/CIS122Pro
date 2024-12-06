@@ -10,11 +10,14 @@ public class StatesEffects : MonoBehaviour
     public GameObject Frost;
     TextMeshProUGUI state_text;
 
+    public GameObject MyFire;
+
 
     public float MaxHealth = 50f;
     public float MaxTemperature = 100f;
 
     public bool mortal = true;
+    bool dead = false;
 
     public float Health;
     public float Temperature;
@@ -23,9 +26,6 @@ public class StatesEffects : MonoBehaviour
     public Dictionary<EffectGiver, Effect> areaEffects = new Dictionary<EffectGiver, Effect>();
 
     bool burning = false;
-
-    private float nextUpdate = 0;
-    private float deltaTime = 0.05f;
 
     // Start is called before the first frame update
     void Start()
@@ -39,17 +39,13 @@ public class StatesEffects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextUpdate)
-        {
-            nextUpdate = Time.time + deltaTime;
-            UpdateEffects();
-            if (state_text)  state_text.text = $"Health: {Health}\nTemperature: {Temperature}";
-        }
-
+        UpdateEffects();
+        if (state_text)  state_text.text = $"Health: {Health}\nTemperature: {Temperature}";
     }
 
     void UpdateEffects()
     {
+        if (Time.timeScale == 0) return;
         List<Effect> toDelete = new List<Effect>();
         List<Effect> allEffects = new List<Effect> (effects);
         foreach (EffectGiver EffectGiver in new List<EffectGiver>(areaEffects.Keys))
@@ -63,16 +59,16 @@ public class StatesEffects : MonoBehaviour
             switch (effect.Name) {
                 case "heat":
                     {
-                        Temperature += effect.Amount * deltaTime;
+                        Temperature += effect.Amount * Time.deltaTime;
                         break;
                     }
                 case "regen":
                     {
-                        Health += effect.Amount * deltaTime;
+                        Health += effect.Amount * Time.deltaTime;
                         break;
                     }
             }
-            effect.Duration -= deltaTime;
+            effect.Duration -= Time.deltaTime;
             if (-1 < effect.Duration && effect.Duration <= 0)
             {
                 toDelete.Add(effect);
@@ -90,11 +86,11 @@ public class StatesEffects : MonoBehaviour
         if (Temperature <= MaxTemperature * 0.1)
         {
             if (Frost) Frost.SetActive(true);
-            Health -= 5 * deltaTime;
+            Health -= 5 * Time.deltaTime;
         }
         if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6)
         {
-            Health += 1 * deltaTime;
+            Health += 1 * Time.deltaTime;
         }
         if (Temperature >= MaxTemperature * 0.9)
         {
@@ -103,12 +99,13 @@ public class StatesEffects : MonoBehaviour
                 burning = true;
                 var newChild = Instantiate(SpellSystem.Instance.onFire, transform.position, transform.rotation);
                 newChild.transform.parent = transform;
+                MyFire = newChild;
             }
         }
         if (burning)
         {
-            Health -= 7 * deltaTime;
-            Temperature += 2 * deltaTime;
+            Health -= 7 * Time.deltaTime;
+            Temperature += 2 * Time.deltaTime;
         }
         // Fixes
         if (Temperature <= 0) Temperature = 0;
@@ -116,14 +113,23 @@ public class StatesEffects : MonoBehaviour
         if (Health <= 0)
         {
             Health = 0;
-            if (mortal)
+            if (!dead)
             {
-                Destroy(gameObject);
-            }
-            else
-            {
-                transform.position = new Vector3(0, -10000, 0);
-                deathScreen.GetComponent<GameOver>().Setup();
+                dead = true;
+                var Ai = gameObject.GetComponent<AI_Movement>();
+                if (!mortal)
+                {
+                    deathScreen.GetComponent<GameOver>().OpenDeathScreen();
+                }
+                else if (Ai)
+                {
+                    if (MyFire) Destroy(MyFire);
+                    Ai.Die();
+                }
+                else
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         if (Health >= MaxHealth) Health = MaxHealth;

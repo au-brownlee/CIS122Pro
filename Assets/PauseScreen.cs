@@ -9,12 +9,14 @@ public class PauseScreen : MonoBehaviour
 
     public void Pause()
     {
+        paused = true;
         gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
     public void UnPause()
     {
+        paused = false;
         gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;

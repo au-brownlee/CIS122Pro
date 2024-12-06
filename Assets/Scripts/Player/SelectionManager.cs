@@ -21,7 +21,7 @@ public class SelectionManager : MonoBehaviour
 
     void Update()
     {
-        if (InventorySystem.Instance.isOpen) return;
+        if (!InventorySystem.Instance.canInteract) return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

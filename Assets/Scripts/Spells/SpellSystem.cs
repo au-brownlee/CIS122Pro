@@ -12,6 +12,9 @@ public class SpellSystem : MonoBehaviour
 
     public GameObject FireSpellUi;
     public GameObject NoteItems;
+    public GameObject NotesUi;
+
+    public GameObject PressBarUi;
 
     public GameObject Player;
 
@@ -28,6 +31,9 @@ public class SpellSystem : MonoBehaviour
     public GameObject onFire;
 
     public bool isOpen;
+    private bool isPressed = false;
+    private float timePressed = 0;
+    private float timeRequired = 0;
 
     public List<GameObject> symbolList = new List<GameObject>();
 
@@ -84,30 +90,44 @@ public class SpellSystem : MonoBehaviour
     {
 
         if (!isOpen) return;
-        if (SymIndex >= 6) return;
-
-        for (int i = 0; i < keys.Count; i++)
+        if (isPressed)
         {
-            if (Input.GetKeyDown(keys[i]))
+            timePressed += Time.deltaTime;
+
+            if (timePressed >= timeRequired) EndCast();
+            else
             {
-                GameObject Symbol = null;
+                Slider slider = PressBarUi.GetComponent<Slider>();
+                slider.maxValue = timeRequired;
+                slider.value = timePressed;
+            }
 
-                Symbol = symbolList[SymIndex].transform.Find("S" + (i + 1).ToString()).gameObject;
-                Symbol.SetActive(true);
-
-                symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
-                SpellText[SymIndex] = (SpellSym)(i + 1);
-                SymIndex++;
-                if (SymIndex >= 6)
+            
+        }
+        else if (SymIndex < 6)
+        {
+            for (int i = 0; i < keys.Count; i++)
+            {
+                if (Input.GetKeyDown(keys[i]))
                 {
+                    GameObject Symbol = null;
+
+                    Symbol = symbolList[SymIndex].transform.Find("S" + (i + 1).ToString()).gameObject;
+                    Symbol.SetActive(true);
+
+                    symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
+                    SpellText[SymIndex] = (SpellSym)(i + 1);
+                    SymIndex++;
+                    if (SymIndex >= 6)
+                    {
+                        break;
+                    }
+                    symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
                     break;
                 }
-                symbolList[SymIndex].transform.Find("glow").gameObject.SetActive(true);
-                break;
             }
         }
         
-
     }
 
     public void StartCast(GameObject wand)
@@ -131,12 +151,39 @@ public class SpellSystem : MonoBehaviour
         symbolList[0].transform.Find("glow").gameObject.SetActive(true);
     }
 
+    public void Press()
+    {
+        if (SpellText.Contains(SpellSym.HOLD)) timeRequired = 1;
+        else timeRequired = 0;
+
+        if (timeRequired == 0)
+        {
+            EndCast(); return;
+        }
+
+        isPressed = true;
+        timePressed = 0;
+        PressBarUi.SetActive(true);
+        NotesUi.SetActive(false);
+    }
+
+    public void UnPress()
+    {
+        isPressed = false;
+        timePressed = 0;
+        PressBarUi.SetActive(false);
+        NotesUi.SetActive(true);
+    }
+
     public void EndCast()
     {
         bool hold = false;
         bool power = false;
         int time = 1;
         bool specificTarget = false;
+
+        UnPress();
+
         GameObject target = Manager.GetComponent<SelectionManager>().Target;
         GameObject SpellTarget = null;
         foreach (SpellSym sym in SpellText)
@@ -145,7 +192,7 @@ public class SpellSystem : MonoBehaviour
             {
                 case SpellSym.HOLD: { hold = true; break; }
                 case SpellSym.POWER: { power = true; break; }
-                case SpellSym.TIME: { time = 2; break; }
+                case SpellSym.TIME: { time++; break; }
                 case SpellSym.ME: {
                         specificTarget = true;
                         SpellTarget = Player;
@@ -173,6 +220,33 @@ public class SpellSystem : MonoBehaviour
             }
         }
         DragDrop WandItem = CurrentWand.GetComponent<DragDrop>();
+
+        if (specificTarget && !SpellTarget)
+        {
+            List<Collider> hitColliders = Physics.OverlapSphere(Focus.transform.position, 6).ToList();
+
+            float closest = 6.1f;
+
+            InteractableObject currentObject;
+            for (int i = 0; i < hitColliders.Count; i++)
+            {
+                currentObject = hitColliders[i].GetComponent<InteractableObject>();
+
+                if (currentObject && currentObject.GetComponent<StatesEffects>()) {
+                    float dist = Vector3.Distance(hitColliders[i].transform.position, Focus.transform.position);
+                    if (dist < closest)
+                    {
+                        if ((SpellText.Contains(SpellSym.CREATURE) && currentObject.Creature) ||
+                            (SpellText.Contains(SpellSym.ITEM) && currentObject.Pickable)
+                            ){
+                            closest = dist;
+                            SpellTarget = hitColliders[i].gameObject;
+                        }
+                    }
+                }
+            }
+        }
+
         if (!SpellTarget)
         {
             if (specificTarget) { Discard(); return; }
@@ -204,14 +278,16 @@ public class SpellSystem : MonoBehaviour
             }
             else
             {
-                newSpell = FireSparcle; 
+                newSpell = FireSparcle;
+                energy = 0.5f;
+                heat = 4;
                 WandItem.ItemScore -= 2;
             }
 
             var newChild = Instantiate(newSpell, Focus.transform.position, Focus.transform.rotation);
             newChild.transform.parent = transform;
-            newChild.GetComponent<SpellEntity>().energy = energy / time;
-            newChild.GetComponent<EffectGiver>().EffectAmount = heat * time;
+            newChild.GetComponent<SpellEntity>().energy = energy * time;
+            newChild.GetComponent<EffectGiver>().EffectAmount = heat / time;
         }
         else
         {
@@ -220,22 +296,22 @@ public class SpellSystem : MonoBehaviour
             if (!state) { Discard(); return; }
             if (hold && power)
             {
-                state.effect("heat", 200 / time, 1 * time);
+                state.effect("heat", 200f / time, 1 * time);
                 WandItem.ItemScore -= 200;
             }
             else if (hold)
             {
-                state.effect("heat", 1 / time, 20 * time);
+                state.effect("heat", 1f / time, 20 * time);
                 WandItem.ItemScore -= 20;
             }
             else if (power)
             {
-                state.effect("heat", 40 / time, 0.5f * time);
+                state.effect("heat", 40f / time, 0.5f * time);
                 WandItem.ItemScore -= 20;
             }
             else
             {
-                state.effect("heat", 4 / time, 0.5f * time);
+                state.effect("heat", 4f / time, 0.5f * time);
                 WandItem.ItemScore -= 2;
             }
         }
@@ -252,6 +328,8 @@ public class SpellSystem : MonoBehaviour
 
     public void Discard()
     {
+        UnPress();
+
         FireSpellUi.SetActive(false);
         NoteItems.SetActive(true);
         isOpen = false;

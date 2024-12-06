@@ -185,8 +185,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.25
+  m_Height: 0.8
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &49991710568529141
@@ -202,7 +202,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: rock
+  ItemScore: 0
+  ItemMaxScore: 0
   Pickable: 1
+  Creature: 0
 --- !u!54 &-3572196407097946477
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -227,7 +230,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &8491175507957916414
@@ -241,7 +244,6 @@ GameObject:
   - component: {fileID: 3965672495321045411}
   - component: {fileID: 6596087087257983007}
   - component: {fileID: 8018023547309427045}
-  - component: {fileID: 5875799442316406584}
   m_Layer: 3
   m_Name: SM_Rock_01_LOD1
   m_TagString: Untagged
@@ -314,24 +316,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5875799442316406584
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8491175507957916414}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.47122955, y: 0.6658225, z: 0.4545058}
-  m_Center: {x: 0.009060688, y: 0.055079907, z: -0.0005090013}

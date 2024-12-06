@@ -163,6 +163,12 @@ namespace DigitalRuby.PyroParticles
                 {
                     r.AddExplosionForce(force, pos, radius);
                 }
+
+                StatesEffects s = h.GetComponent<StatesEffects>();
+                if (s != null)
+                {
+                    s.effect("heat", 100, 0.5f);
+                }
             }
         }
 

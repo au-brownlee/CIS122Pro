@@ -21,6 +21,8 @@ public class AI_Movement : MonoBehaviour
 
     public bool isWalking;
 
+    public bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,11 @@ public class AI_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isWalking)
+        if (isDead)
+        {
+
+        }
+        else if (isWalking)
         {
 
             animator.SetBool("isRunning", true);
@@ -99,5 +105,11 @@ public class AI_Movement : MonoBehaviour
 
         isWalking = true;
         walkCounter = walkTime;
+    }
+
+    public void Die()
+    {
+        isDead = true;
+        animator.SetBool("isDead", true);
     }
 }

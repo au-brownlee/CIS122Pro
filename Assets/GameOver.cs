@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour
-{
-    public void Setup()
+public class GameOver : MonoBehaviour {
+
+    public bool isOver = false;
+
+    public void OpenDeathScreen()
     {
+        isOver = true;
         gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
@@ -14,8 +17,8 @@ public class GameOver : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitButton()
