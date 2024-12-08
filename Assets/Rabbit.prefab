@@ -1061,7 +1061,7 @@ MonoBehaviour:
   deathScreen: {fileID: 0}
   MyFire: {fileID: 0}
   MaxHealth: 20
-  MaxTemperature: 50
+  MaxTemperature: 40
   MaxHunger: 50
   mortal: 1
   Health: 20
