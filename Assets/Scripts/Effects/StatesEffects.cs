@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class StatesEffects : MonoBehaviour
 {
-    public GameObject state_Info_UI;
     public GameObject deathScreen;
-    public GameObject Frost;
     TextMeshProUGUI state_text;
 
     public GameObject MyFire;
@@ -15,32 +13,41 @@ public class StatesEffects : MonoBehaviour
 
     public float MaxHealth = 50f;
     public float MaxTemperature = 100f;
+    public float MaxHunger = 50f;
 
     public bool mortal = true;
     bool dead = false;
 
     public float Health;
     public float Temperature;
+    public float Hunger;
     public List<Effect> effects = new List<Effect>();
 
     public Dictionary<EffectGiver, Effect> areaEffects = new Dictionary<EffectGiver, Effect>();
 
-    bool burning = false;
+    public bool burning = false;
+    public bool freezing = false;
+    public bool hungry = false;
+    public bool hurting = false;
+    public bool healing = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Health = MaxHealth;
+        Hunger = MaxHunger;
         Temperature = MaxTemperature / 2;
-        if (state_Info_UI) state_text = state_Info_UI.GetComponent<TextMeshProUGUI>();
-        if (!mortal) effects.Add(new Effect("heat", -1, -1));
+        if (!mortal) 
+        { 
+            effects.Add(new Effect("heat", -1, -1));
+            effects.Add(new Effect("feed", -0.3f, -1));
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateEffects();
-        if (state_text)  state_text.text = $"Health: {Health}\nTemperature: {Temperature}";
     }
 
     void UpdateEffects()
@@ -53,9 +60,16 @@ public class StatesEffects : MonoBehaviour
             if (EffectGiver == null) areaEffects.Remove(EffectGiver);
             else allEffects.Add(areaEffects[EffectGiver]);
         }
+        // reset statuses
+        freezing = false;
+        hungry = false;
+        hurting = false;
+        healing = false;
+
+        float HealthWas = Health;
         foreach (Effect effect in allEffects)
         {
-            Debug.Log($"{effect.Name} {effect.Amount}");
+            // Debug.Log($"{effect.Name} {effect.Amount}");
             switch (effect.Name) {
                 case "heat":
                     {
@@ -65,6 +79,11 @@ public class StatesEffects : MonoBehaviour
                 case "regen":
                     {
                         Health += effect.Amount * Time.deltaTime;
+                        break;
+                    }
+                case "feed":
+                    {
+                        Hunger += effect.Amount * Time.deltaTime;
                         break;
                     }
             }
@@ -81,14 +100,13 @@ public class StatesEffects : MonoBehaviour
                 effects.Remove(effect);
             }
         }
-        if (Frost) Frost.SetActive(false);
-        // Changes
+        // Changes: Temperature
         if (Temperature <= MaxTemperature * 0.1)
         {
-            if (Frost) Frost.SetActive(true);
+            freezing = true;
             Health -= 5 * Time.deltaTime;
         }
-        if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6)
+        if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6 && Hunger > MaxHunger * 0.7)
         {
             Health += 1 * Time.deltaTime;
         }
@@ -107,9 +125,20 @@ public class StatesEffects : MonoBehaviour
             Health -= 7 * Time.deltaTime;
             Temperature += 2 * Time.deltaTime;
         }
+        // Changes: Hunger
+        if (Hunger < MaxHunger * 0.25)
+        {
+            hungry = true;
+        }
+        if (Hunger < 0)
+        {
+            Health -= 4 * Time.deltaTime;
+        }
         // Fixes
         if (Temperature <= 0) Temperature = 0;
         if (Temperature >= MaxTemperature) Temperature = MaxTemperature;
+        if (Hunger <= 0) Hunger = 0;
+        if (Hunger >= MaxHunger) Hunger = MaxHunger;
         if (Health <= 0)
         {
             Health = 0;
@@ -133,6 +162,8 @@ public class StatesEffects : MonoBehaviour
             }
         }
         if (Health >= MaxHealth) Health = MaxHealth;
+        if (Health < HealthWas || Health <= 0) hurting = true;
+        if (Health > HealthWas) healing = true;
     }
 
     public void effect(string aName, float anAmount, float aDuration)

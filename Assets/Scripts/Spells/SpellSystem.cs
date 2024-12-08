@@ -34,6 +34,7 @@ public class SpellSystem : MonoBehaviour
     private bool isPressed = false;
     private float timePressed = 0;
     private float timeRequired = 0;
+    public float spellRadius = 10;
 
     public List<GameObject> symbolList = new List<GameObject>();
 
@@ -223,9 +224,9 @@ public class SpellSystem : MonoBehaviour
 
         if (specificTarget && !SpellTarget)
         {
-            List<Collider> hitColliders = Physics.OverlapSphere(Focus.transform.position, 6).ToList();
+            List<Collider> hitColliders = Physics.OverlapSphere(Focus.transform.position, spellRadius).ToList();
 
-            float closest = 6.1f;
+            float closest = spellRadius + 0.1f;
 
             InteractableObject currentObject;
             for (int i = 0; i < hitColliders.Count; i++)

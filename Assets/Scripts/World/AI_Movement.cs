@@ -22,6 +22,10 @@ public class AI_Movement : MonoBehaviour
     public bool isWalking;
 
     public bool isDead = false;
+    public float DecayTime = 2;
+    internal float DeathTimer = 0;
+    public string LootName = "???";
+    public float LootMaxScore;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +48,16 @@ public class AI_Movement : MonoBehaviour
     {
         if (isDead)
         {
+            DeathTimer += Time.deltaTime;
+            if (DeathTimer >= DecayTime)
+            {
+                if (LootName != "???")
+                {
+                    InventorySystem.Instance.SpawnNewObject(LootName, LootMaxScore, LootMaxScore, gameObject);
 
+                }
+                Destroy(gameObject);
+            }
         }
         else if (isWalking)
         {

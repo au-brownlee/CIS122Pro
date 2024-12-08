@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
@@ -11,6 +12,7 @@ public class InventorySystem : MonoBehaviour
 
     public static InventorySystem Instance { get; set; }
 
+    public GameObject Player;
     public GameObject inventoryScreenUI;
     public GameObject PauseScreenUI;
     public GameObject NoteItems;
@@ -180,7 +182,6 @@ public class InventorySystem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Escape))
             {
-                Debug.Log("close inv");
                 inventoryScreenUI.SetActive(false);
                 NoteItems.SetActive(true);
                 Cursor.lockState = CursorLockMode.Locked;
@@ -206,7 +207,6 @@ public class InventorySystem : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                Debug.Log("open inv");
                 inventoryScreenUI.SetActive(true);
                 NoteItems.SetActive(false);
                 Cursor.lockState = CursorLockMode.None;
@@ -248,6 +248,11 @@ public class InventorySystem : MonoBehaviour
                     {
                         SpellSystem.Instance.StartCast(RightHandItem);
                     }
+                    if (RightHandItemData.ItemName == "meat")
+                    {
+                        Player.GetComponent<StatesEffects>().effect("feed", 15, 1);
+                        Destroy(RightHandItem);
+                    }
                 }
             }
         }
@@ -287,6 +292,17 @@ public class InventorySystem : MonoBehaviour
         ItemToAdd.transform.SetParent(toSlot.transform);
     }
 
+    public void SpawnNewObject(string name, float score, float maxScore, GameObject Reference)
+    {
+        ItemToAdd = Instantiate(Resources.Load<GameObject>(name + "3d"),
+            Reference.transform.position,
+            Reference.transform.rotation);
+        ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
+        ItemToAdd.GetComponent<InteractableObject>().ItemScore = score;
+        ItemToAdd.GetComponent<InteractableObject>().ItemMaxScore = maxScore;
+        ItemToAdd.transform.SetParent(WorldItems.transform);
+    }
+
     private GameObject FindNextEmptySlot()
     {
         foreach (GameObject slot in slotList)
@@ -322,14 +338,8 @@ public class InventorySystem : MonoBehaviour
         string name = ItemToDrop.GetComponent<DragDrop>().ItemName;
         float score = ItemToDrop.GetComponent<DragDrop>().ItemScore;
         float maxScore = ItemToDrop.GetComponent<DragDrop>().ItemMaxScore;
-        ItemToAdd = Instantiate(
-            Resources.Load<GameObject>(name + "3d"),
-            Focus.transform.position,
-            Focus.transform.rotation);
-        ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
-        ItemToAdd.GetComponent<InteractableObject>().ItemScore = score;
-        ItemToAdd.GetComponent<InteractableObject>().ItemMaxScore = maxScore;
-        ItemToAdd.transform.SetParent(WorldItems.transform);
+
+        SpawnNewObject(name, score, maxScore, Focus);
         Destroy(ItemToDrop.gameObject);
     }
 }

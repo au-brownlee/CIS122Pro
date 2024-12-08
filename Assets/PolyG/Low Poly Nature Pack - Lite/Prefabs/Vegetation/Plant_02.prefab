@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemName: stick
+  ItemScore: 0
+  ItemMaxScore: 0
   Pickable: 1
   Creature: 0
 --- !u!136 &-5026261700112082543
@@ -69,7 +71,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.03
+  m_Radius: 0.02
   m_Height: 0.25
   m_Direction: 1
   m_Center: {x: 0, y: 0.1, z: 0}
@@ -85,14 +87,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5d68aa8806816418c8970725a37b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state_Info_UI: {fileID: 0}
   deathScreen: {fileID: 0}
-  Frost: {fileID: 0}
+  MyFire: {fileID: 0}
   MaxHealth: 20
   MaxTemperature: 50
+  MaxHunger: 50
   mortal: 1
   Health: 0
   Temperature: 0
+  Hunger: 0
+  burning: 0
+  freezing: 0
+  hungry: 0
+  hurting: 0
+  healing: 0
 --- !u!1001 &7299673174315417759
 PrefabInstance:
   m_ObjectHideFlags: 0

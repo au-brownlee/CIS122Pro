@@ -1026,6 +1026,9 @@ MonoBehaviour:
   waitCounter: 0
   isWalking: 0
   isDead: 0
+  DecayTime: 1.5
+  LootName: meat
+  LootMaxScore: 1
 --- !u!114 &3813160875110400079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1055,15 +1058,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5d68aa8806816418c8970725a37b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state_Info_UI: {fileID: 0}
   deathScreen: {fileID: 0}
-  Frost: {fileID: 0}
   MyFire: {fileID: 0}
   MaxHealth: 20
   MaxTemperature: 50
+  MaxHunger: 50
   mortal: 1
   Health: 20
   Temperature: 50
+  Hunger: 0
+  burning: 0
+  freezing: 0
+  hungry: 0
+  hurting: 0
+  healing: 0
 --- !u!136 &6797653572863131670
 CapsuleCollider:
   m_ObjectHideFlags: 0
