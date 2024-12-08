@@ -26,6 +26,7 @@ public class AI_Movement : MonoBehaviour
     internal float DeathTimer = 0;
     public string LootName = "???";
     public float LootMaxScore;
+    public float LootHeigh = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +54,8 @@ public class AI_Movement : MonoBehaviour
             {
                 if (LootName != "???")
                 {
-                    InventorySystem.Instance.SpawnNewObject(LootName, LootMaxScore, LootMaxScore, gameObject);
+                    InventorySystem.Instance.SpawnNewObject(LootName, 
+                        LootMaxScore, LootMaxScore, gameObject, new Vector3(0, LootHeigh, 0));
 
                 }
                 Destroy(gameObject);

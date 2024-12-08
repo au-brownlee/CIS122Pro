@@ -255,6 +255,23 @@ public class InventorySystem : MonoBehaviour
                     }
                 }
             }
+            // changing hands
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (RightHandItem && LeftHandItem)
+                {
+                    RightHandItem.transform.SetParent(LeftHandSlot.transform);
+                    LeftHandItem.transform.SetParent(RightHandSlot.transform);
+                }
+                else if (RightHandItem)
+                {
+                    RightHandItem.transform.SetParent(LeftHandSlot.transform);
+                }
+                else if (LeftHandItem)
+                {
+                    LeftHandItem.transform.SetParent(RightHandSlot.transform);
+                }
+            }
         }
 
 
@@ -292,15 +309,19 @@ public class InventorySystem : MonoBehaviour
         ItemToAdd.transform.SetParent(toSlot.transform);
     }
 
-    public void SpawnNewObject(string name, float score, float maxScore, GameObject Reference)
+    public void SpawnNewObject(string name, float score, float maxScore, GameObject Reference, Vector3 offset)
     {
         ItemToAdd = Instantiate(Resources.Load<GameObject>(name + "3d"),
-            Reference.transform.position,
+            Reference.transform.position + offset,
             Reference.transform.rotation);
         ItemToAdd.GetComponent<InteractableObject>().ItemName = name;
         ItemToAdd.GetComponent<InteractableObject>().ItemScore = score;
         ItemToAdd.GetComponent<InteractableObject>().ItemMaxScore = maxScore;
         ItemToAdd.transform.SetParent(WorldItems.transform);
+    }
+    public void SpawnNewObject(string name, float score, float maxScore, GameObject Reference)
+    {
+        SpawnNewObject(name, score, maxScore, Reference, new Vector3(0, 0, 0));
     }
 
     private GameObject FindNextEmptySlot()

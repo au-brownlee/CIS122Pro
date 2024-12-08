@@ -5,18 +5,11 @@ using UnityEngine;
 
 public class StatesEffects : MonoBehaviour
 {
-    public GameObject deathScreen;
-    TextMeshProUGUI state_text;
-
-    public GameObject MyFire;
-
-
     public float MaxHealth = 50f;
     public float MaxTemperature = 100f;
     public float MaxHunger = 50f;
 
-    public bool mortal = true;
-    bool dead = false;
+    protected bool dead = false;
 
     public float Health;
     public float Temperature;
@@ -26,31 +19,23 @@ public class StatesEffects : MonoBehaviour
     public Dictionary<EffectGiver, Effect> areaEffects = new Dictionary<EffectGiver, Effect>();
 
     public bool burning = false;
+    GameObject MyFire;
+
     public bool freezing = false;
     public bool hungry = false;
     public bool hurting = false;
     public bool healing = false;
 
     // Start is called before the first frame update
-    void Start()
+    internal virtual void Start()
     {
         Health = MaxHealth;
         Hunger = MaxHunger;
         Temperature = MaxTemperature / 2;
-        if (!mortal) 
-        { 
-            effects.Add(new Effect("heat", -1, -1));
-            effects.Add(new Effect("feed", -0.3f, -1));
-        }
     }
 
     // Update is called once per frame
     void Update()
-    {
-        UpdateEffects();
-    }
-
-    void UpdateEffects()
     {
         if (Time.timeScale == 0) return;
         List<Effect> toDelete = new List<Effect>();
@@ -101,17 +86,9 @@ public class StatesEffects : MonoBehaviour
             }
         }
         // Changes: Temperature
-        if (Temperature <= MaxTemperature * 0.1)
+        if (Temperature >= MaxTemperature)
         {
-            freezing = true;
-            Health -= 5 * Time.deltaTime;
-        }
-        if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6 && Hunger > MaxHunger * 0.7)
-        {
-            Health += 1 * Time.deltaTime;
-        }
-        if (Temperature >= MaxTemperature * 0.9)
-        {
+            Temperature = MaxTemperature;
             if (!burning)
             {
                 burning = true;
@@ -120,50 +97,42 @@ public class StatesEffects : MonoBehaviour
                 MyFire = newChild;
             }
         }
+        else if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6 && Hunger > MaxHunger * 0.7)
+        {
+            Health += 1 * Time.deltaTime;
+        }
+        else if (Temperature <= 0)
+        {
+            Temperature = 0;
+            freezing = true;
+            Health -= 5 * Time.deltaTime;
+        }
         if (burning)
         {
             Health -= 7 * Time.deltaTime;
             Temperature += 2 * Time.deltaTime;
         }
         // Changes: Hunger
+        if (Hunger >= MaxHunger) Hunger = MaxHunger;
         if (Hunger < MaxHunger * 0.25)
         {
             hungry = true;
         }
-        if (Hunger < 0)
+        if (Hunger <= 0)
         {
-            Health -= 4 * Time.deltaTime;
+            Hunger = 0;
+            Health -= 1 * Time.deltaTime;
         }
-        // Fixes
-        if (Temperature <= 0) Temperature = 0;
-        if (Temperature >= MaxTemperature) Temperature = MaxTemperature;
-        if (Hunger <= 0) Hunger = 0;
-        if (Hunger >= MaxHunger) Hunger = MaxHunger;
-        if (Health <= 0)
+        // Changes: Health
+        if (Health >= MaxHealth) Health = MaxHealth;
+        else if (Health <= 0)
         {
             Health = 0;
-            if (!dead)
-            {
-                dead = true;
-                var Ai = gameObject.GetComponent<AI_Movement>();
-                if (!mortal)
-                {
-                    deathScreen.GetComponent<GameOver>().OpenDeathScreen();
-                }
-                else if (Ai)
-                {
-                    if (MyFire) Destroy(MyFire);
-                    Ai.Die();
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
-            }
+            if (!dead) Die();
         }
-        if (Health >= MaxHealth) Health = MaxHealth;
+        // Statuses
         if (Health < HealthWas || Health <= 0) hurting = true;
-        if (Health > HealthWas) healing = true;
+        else if (Health > HealthWas) healing = true;
     }
 
     public void effect(string aName, float anAmount, float aDuration)
@@ -185,6 +154,21 @@ public class StatesEffects : MonoBehaviour
         if (source && areaEffects.ContainsKey(source))
         {
             areaEffects.Remove(source);
+        }
+    }
+
+    public virtual void Die()
+    {
+        dead = true;
+        var Ai = gameObject.GetComponent<AI_Movement>();
+        if (Ai)
+        {
+            if (MyFire) Destroy(MyFire);
+            Ai.Die();
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8260414767725919869}
   - component: {fileID: 4043210655659988901}
+  - component: {fileID: 6508602843425483222}
   m_Layer: 0
   m_Name: Plant_03
   m_TagString: Untagged
@@ -45,14 +46,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5d68aa8806816418c8970725a37b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state_Info_UI: {fileID: 0}
-  deathScreen: {fileID: 0}
-  Frost: {fileID: 0}
   MaxHealth: 40
   MaxTemperature: 20
-  mortal: 1
+  MaxHunger: 50
   Health: 0
   Temperature: 0
+  Hunger: 0
+  burning: 0
+  freezing: 0
+  hungry: 0
+  hurting: 0
+  healing: 0
+--- !u!135 &6508602843425483222
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783775719428604326}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4295307288219200842
 PrefabInstance:
   m_ObjectHideFlags: 0

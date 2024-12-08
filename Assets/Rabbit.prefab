@@ -1029,6 +1029,7 @@ MonoBehaviour:
   DecayTime: 1.5
   LootName: meat
   LootMaxScore: 1
+  LootHeigh: 0.2
 --- !u!114 &3813160875110400079
 MonoBehaviour:
   m_ObjectHideFlags: 0
