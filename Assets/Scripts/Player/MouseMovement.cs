@@ -38,7 +38,7 @@ public class MouseMovement : MonoBehaviour
         playerHead.localRotation = Quaternion.Euler(xRotation, 0, 0f);
     }
 
-    public void OnSlider(float value)
+    public void SetSensitivity(float value)
     {
         mouseSensitivity = 400f * value;
     }
