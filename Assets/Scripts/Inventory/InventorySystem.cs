@@ -262,19 +262,27 @@ public class InventorySystem : MonoBehaviour
                 {
                     RightHandItem.transform.SetParent(LeftHandSlot.transform);
                     LeftHandItem.transform.SetParent(RightHandSlot.transform);
+                    ZeroLocalPosition(RightHandItem);
+                    ZeroLocalPosition(LeftHandItem);
+
                 }
                 else if (RightHandItem)
                 {
                     RightHandItem.transform.SetParent(LeftHandSlot.transform);
+                    ZeroLocalPosition(LeftHandItem);
                 }
                 else if (LeftHandItem)
                 {
                     LeftHandItem.transform.SetParent(RightHandSlot.transform);
+                    ZeroLocalPosition(RightHandItem);
                 }
             }
         }
+    }
 
-
+    void ZeroLocalPosition(GameObject item) 
+    { 
+        item.GetComponent<RectTransform>().localPosition = Vector3.zero; 
     }
 
     public bool AddToInventory(GameObject Item)

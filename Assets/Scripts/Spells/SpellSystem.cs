@@ -271,14 +271,11 @@ public class SpellSystem : MonoBehaviour
                 state.effect("heat", 4f / time, 0.5f * time);
                 WandItem.ItemScore -= 2;
             }
-
-            if (specificTarget) { Discard(); return; }
-
-            
         }
         // if no target create a spell entity
         else
         {
+            if (specificTarget) { Discard(); return; }
             GameObject newSpell = null;
             float energy = 1;
             float heat = 1;
