@@ -387,6 +387,7 @@
 "Assets/Scripts/Effects/Effect.cs"
 "Assets/Scripts/Effects/EffectGiver.cs"
 "Assets/Scripts/Effects/StatesEffects.cs"
+"Assets/Scripts/GameSettings.cs"
 "Assets/Scripts/Inventory/DragDrop.cs"
 "Assets/Scripts/Inventory/GameItem.cs"
 "Assets/Scripts/Inventory/InventorySystem.cs"

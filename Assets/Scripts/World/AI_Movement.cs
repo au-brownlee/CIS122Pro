@@ -28,7 +28,6 @@ public class AI_Movement : MonoBehaviour
     public float LootMaxScore;
     public float LootHeigh = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -44,9 +43,9 @@ public class AI_Movement : MonoBehaviour
         ChooseDirection();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // wait for DecayTime, then spawn loot and destroy creature
         if (isDead)
         {
             DeathTimer += Time.deltaTime;
@@ -61,9 +60,9 @@ public class AI_Movement : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+        // if walking go to selected direction
         else if (isWalking)
         {
-
             animator.SetBool("isRunning", true);
 
             walkCounter -= Time.deltaTime;
@@ -98,12 +97,9 @@ public class AI_Movement : MonoBehaviour
                 //reset the waitCounter
                 waitCounter = waitTime;
             }
-
-
         }
-        else
+        else // wait and choose new direction
         {
-
             waitCounter -= Time.deltaTime;
 
             if (waitCounter <= 0)
@@ -112,7 +108,6 @@ public class AI_Movement : MonoBehaviour
             }
         }
     }
-
 
     public void ChooseDirection()
     {

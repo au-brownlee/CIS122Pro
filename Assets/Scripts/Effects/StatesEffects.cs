@@ -26,7 +26,6 @@ public class StatesEffects : MonoBehaviour
     public bool hurting = false;
     public bool healing = false;
 
-    // Start is called before the first frame update
     internal virtual void Start()
     {
         Health = MaxHealth;
@@ -34,9 +33,16 @@ public class StatesEffects : MonoBehaviour
         Temperature = MaxTemperature / 2;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // reset statuses
+        freezing = false;
+        hungry = false;
+        hurting = false;
+        healing = false;
+
+        float HealthWas = Health;
+        // make a list of current effects
         if (Time.timeScale == 0) return;
         List<Effect> toDelete = new List<Effect>();
         List<Effect> allEffects = new List<Effect> (effects);
@@ -45,13 +51,7 @@ public class StatesEffects : MonoBehaviour
             if (EffectGiver == null) areaEffects.Remove(EffectGiver);
             else allEffects.Add(areaEffects[EffectGiver]);
         }
-        // reset statuses
-        freezing = false;
-        hungry = false;
-        hurting = false;
-        healing = false;
-
-        float HealthWas = Health;
+        // apply effects
         foreach (Effect effect in allEffects)
         {
             // Debug.Log($"{effect.Name} {effect.Amount}");
@@ -97,7 +97,8 @@ public class StatesEffects : MonoBehaviour
                 MyFire = newChild;
             }
         }
-        else if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6 && Hunger > MaxHunger * 0.7)
+        else if (MaxTemperature * 0.4 < Temperature && Temperature  <= MaxTemperature * 0.6 
+            && Hunger > MaxHunger * 0.7)
         {
             Health += 1 * Time.deltaTime;
         }

@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "D:\\Unity\\CIS122Pro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\playerstateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\playerstateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\effects\\stateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|d:\\unity\\cis122pro\\assets\\scripts\\inventory\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\player\\playerstateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerstateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\effects\\stateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\effects\\stateseffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\inventory\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\inventory\\inventorysystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\player\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\spells\\spellentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,14 +47,6 @@
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bars\\statusbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\player\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\selectionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\gameover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\gameover.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\scripts\\world\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\world\\interactableobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -61,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|D:\\Unity\\CIS122Pro\\assets\\textmesh pro\\shaders\\tmp_sdf-mobile.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{5BD53CBA-A277-D6E7-B95A-C77DA4FE68EB}|Assembly-CSharp.csproj|solutionrelative:assets\\textmesh pro\\shaders\\tmp_sdf-mobile.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\CIS122Pro\\Assets\\Scripts\\StatesEffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\StatesEffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\CIS122Pro\\Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -121,6 +117,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\TemperatureBar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Bars\\TemperatureBar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\GameOver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -135,43 +135,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlayerStatesEffects.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\PlayerStatesEffects.cs",
-              "RelativeDocumentMoniker": "Assets\\PlayerStatesEffects.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\PlayerStatesEffects.cs",
-              "RelativeToolTip": "Assets\\PlayerStatesEffects.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Title": "GameSettings.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\GameSettings.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSettings.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\GameSettings.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T19:48:09.236Z",
+              "WhenOpened": "2024-12-11T02:23:19.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PlayerStatusShow.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "PlayerStatesEffects.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\PlayerStatesEffects.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerStatesEffects.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\PlayerStatesEffects.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerStatesEffects.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T03:52:47.095Z"
+              "WhenOpened": "2024-12-08T19:49:18.322Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AI_Movement.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\World\\AI_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\World\\AI_Movement.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\World\\AI_Movement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\World\\AI_Movement.cs",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAYwBwAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T02:53:03.887Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "TemperatureBar.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\TemperatureBar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bars\\TemperatureBar.cs",
@@ -183,7 +171,235 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
+              "Title": "DemoScriptEditor.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
+              "RelativeDocumentMoniker": "Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
+              "RelativeToolTip": "Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T23:01:53.14Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "GameOver.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs",
+              "RelativeDocumentMoniker": "Assets\\GameOver.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs",
+              "RelativeToolTip": "Assets\\GameOver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T03:04:37.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EffectGiver.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\EffectGiver.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EffectGiver.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\EffectGiver.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EffectGiver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T19:14:11.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StatesEffects.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effects\\StatesEffects.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Effects\\StatesEffects.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effects\\StatesEffects.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Effects\\StatesEffects.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T03:05:53.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InventorySystem.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Inventory\\InventorySystem.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAkwBMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-29T03:23:27.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SelectionManager.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\SelectionManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\SelectionManager.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\SelectionManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\SelectionManager.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwBkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T03:18:14.59Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "InventorySystem.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InventorySystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySystem.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InventorySystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InventorySystem.cs",
+              "ViewState": "AgIAAN0AAAAAAAAAAAAwwO4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T17:48:24.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ItemSlot.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\ItemSlot.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemSlot.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\ItemSlot.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemSlot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T17:49:01.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SpellSystem.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpellSystem.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpellSystem.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAIBZwOoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T05:19:43.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Effect.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Effect.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Effect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T18:12:05.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DragDrop.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\DragDrop.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\DragDrop.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\DragDrop.cs",
+              "RelativeToolTip": "Assets\\Scripts\\DragDrop.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T17:47:24.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "InteractableObject.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\InteractableObject.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\InteractableObject.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:37:02.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "PlayerState.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerState.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T01:02:02.246Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SpellEntity.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellEntity.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SpellEntity.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellEntity.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SpellEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T04:13:47.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AI_Movement.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\AI_Movement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_Movement.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\AI_Movement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AI_Movement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T00:36:28.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MouseMovement.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MouseMovement.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MouseMovement.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T22:54:42.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PlayerMovement.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-09T22:54:09.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PlayerStatusShow.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Bars\\PlayerStatusShow.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:52:47.095Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AI_Movement.cs",
+              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\World\\AI_Movement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\World\\AI_Movement.cs",
+              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\World\\AI_Movement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\World\\AI_Movement.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAYwBwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T02:53:03.887Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "EffectGiver.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effects\\EffectGiver.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Effects\\EffectGiver.cs",
@@ -195,7 +411,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "SpellSystem.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Spells\\SpellSystem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spells\\SpellSystem.cs",
@@ -207,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SpellEntity.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Spells\\SpellEntity.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spells\\SpellEntity.cs",
@@ -219,44 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "InventorySystem.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Inventory\\InventorySystem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Inventory\\InventorySystem.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Inventory\\InventorySystem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Inventory\\InventorySystem.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAgwCkBAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T03:23:27.398Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StatesEffects.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effects\\StatesEffects.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Effects\\StatesEffects.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effects\\StatesEffects.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Effects\\StatesEffects.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAkwKgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T03:05:53.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SelectionManager.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\SelectionManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\SelectionManager.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Player\\SelectionManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\SelectionManager.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T03:18:14.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "StatusBar.cs",
               "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Bars\\StatusBar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Bars\\StatusBar.cs",
@@ -265,18 +444,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T01:29:10.334Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GameOver.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs",
-              "RelativeDocumentMoniker": "Assets\\GameOver.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\GameOver.cs",
-              "RelativeToolTip": "Assets\\GameOver.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T03:04:37.392Z"
             },
             {
               "$type": "Document",
@@ -325,172 +492,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
               "WhenOpened": "2024-11-29T03:02:48.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DemoScriptEditor.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
-              "RelativeDocumentMoniker": "Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
-              "RelativeToolTip": "Assets\\PyroParticles\\Demo\\DemoScriptEditor.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T23:01:53.14Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "EffectGiver.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\EffectGiver.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EffectGiver.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\EffectGiver.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EffectGiver.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T19:14:11.875Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Effect.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Effect.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\Effect.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Effect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T18:12:05.001Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "StatesEffects.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\StatesEffects.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\StatesEffects.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\StatesEffects.cs",
-              "RelativeToolTip": "Assets\\Scripts\\StatesEffects.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T17:11:29.12Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "SpellSystem.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SpellSystem.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellSystem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SpellSystem.cs",
-              "ViewState": "AgIAAOUAAAAAAAAAAIBZwOoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-08T05:19:43.767Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ItemSlot.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\ItemSlot.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemSlot.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\ItemSlot.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemSlot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:49:01.125Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "InventorySystem.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InventorySystem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\InventorySystem.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InventorySystem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\InventorySystem.cs",
-              "ViewState": "AgIAAN0AAAAAAAAAAAAwwO4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:48:24.351Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DragDrop.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\DragDrop.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\DragDrop.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\DragDrop.cs",
-              "RelativeToolTip": "Assets\\Scripts\\DragDrop.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-17T17:47:24.792Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "InteractableObject.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\InteractableObject.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\InteractableObject.cs",
-              "RelativeToolTip": "Assets\\Scripts\\InteractableObject.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T00:37:02.293Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "PlayerState.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerState.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerState.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerState.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerState.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T01:02:02.246Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SpellEntity.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellEntity.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SpellEntity.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\SpellEntity.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SpellEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-09T04:13:47.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "AI_Movement.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\AI_Movement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_Movement.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\AI_Movement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\AI_Movement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-10T00:36:28.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MouseMovement.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MouseMovement.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\MouseMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MouseMovement.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T22:54:42.446Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
-              "ToolTip": "D:\\Unity\\CIS122Pro\\Assets\\Scripts\\PlayerMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-09T22:54:09.341Z"
             }
           ]
         }

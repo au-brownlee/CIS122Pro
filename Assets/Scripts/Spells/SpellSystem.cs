@@ -176,21 +176,21 @@ public class SpellSystem : MonoBehaviour
         NotesUi.SetActive(true);
     }
 
-    public void EndCast()
+    public void EndCast() // decipher and cast a spell
     {
+        UnPress();
+        // spell properties
         bool hold = false;
         bool power = false;
         int time = 1;
         bool specificTarget = false;
-
-        UnPress();
-
+        // required objects
         GameObject target = Manager.GetComponent<SelectionManager>().Target;
         GameObject SpellTarget = null;
-        foreach (SpellSym sym in SpellText)
-        {
-            switch (sym)
-            {
+        DragDrop WandItem = CurrentWand.GetComponent<DragDrop>();
+        // decipher the spell symbols
+        foreach (SpellSym sym in SpellText) {
+            switch (sym) {
                 case SpellSym.HOLD: { hold = true; break; }
                 case SpellSym.POWER: { power = true; break; }
                 case SpellSym.TIME: { time++; break; }
@@ -220,8 +220,7 @@ public class SpellSystem : MonoBehaviour
                     }
             }
         }
-        DragDrop WandItem = CurrentWand.GetComponent<DragDrop>();
-
+        // find a fitting target nearby
         if (specificTarget && !SpellTarget)
         {
             List<Collider> hitColliders = Physics.OverlapSphere(Focus.transform.position, spellRadius).ToList();
@@ -247,11 +246,39 @@ public class SpellSystem : MonoBehaviour
                 }
             }
         }
+        // cast a spell: cast on target
+        if (SpellTarget) {
+            Debug.Log($"Cast on ({SpellTarget})");
+            StatesEffects state = SpellTarget.GetComponent<StatesEffects>();
+            if (!state) { Discard(); return; }
+            if (hold && power)
+            {
+                state.effect("heat", 200f / time, 1 * time);
+                WandItem.ItemScore -= 200;
+            }
+            else if (hold)
+            {
+                state.effect("heat", 1f / time, 20 * time);
+                WandItem.ItemScore -= 20;
+            }
+            else if (power)
+            {
+                state.effect("heat", 40f / time, 0.5f * time);
+                WandItem.ItemScore -= 20;
+            }
+            else
+            {
+                state.effect("heat", 4f / time, 0.5f * time);
+                WandItem.ItemScore -= 2;
+            }
 
-        if (!SpellTarget)
-        {
             if (specificTarget) { Discard(); return; }
 
+            
+        }
+        // if no target create a spell entity
+        else
+        {
             GameObject newSpell = null;
             float energy = 1;
             float heat = 1;
@@ -290,41 +317,14 @@ public class SpellSystem : MonoBehaviour
             newChild.GetComponent<SpellEntity>().energy = energy * time;
             newChild.GetComponent<EffectGiver>().EffectAmount = heat / time;
         }
-        else
-        {
-            Debug.Log($"Cast on ({SpellTarget})");
-            StatesEffects state = SpellTarget.GetComponent<StatesEffects>();
-            if (!state) { Discard(); return; }
-            if (hold && power)
-            {
-                state.effect("heat", 200f / time, 1 * time);
-                WandItem.ItemScore -= 200;
-            }
-            else if (hold)
-            {
-                state.effect("heat", 1f / time, 20 * time);
-                WandItem.ItemScore -= 20;
-            }
-            else if (power)
-            {
-                state.effect("heat", 40f / time, 0.5f * time);
-                WandItem.ItemScore -= 20;
-            }
-            else
-            {
-                state.effect("heat", 4f / time, 0.5f * time);
-                WandItem.ItemScore -= 2;
-            }
-        }
-
-        if (WandItem.ItemScore <= 0)
-        {
+        // destroy the wand if it is out of mana
+        if (WandItem.ItemScore <= 0) {
             InventorySystem Inventory = InventorySystem.Instance;
             Destroy(Inventory.RightHandItem);
             Inventory.CreateNewItem("stick", 1, 1, Inventory.RightHandSlot);
         }
-
-        Discard();
+        
+        Discard(); // close the UI
     }
 
     public void Discard()

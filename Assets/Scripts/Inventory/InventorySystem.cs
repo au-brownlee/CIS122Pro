@@ -307,6 +307,10 @@ public class InventorySystem : MonoBehaviour
         ItemToAdd.GetComponent<DragDrop>().ItemScore = score;
         ItemToAdd.GetComponent<DragDrop>().ItemMaxScore = maxScore;
         ItemToAdd.transform.SetParent(toSlot.transform);
+        RectTransform rect = ItemToAdd.GetComponent<RectTransform>();
+        rect.offsetMin = Vector2.zero;
+        rect.offsetMax = Vector2.zero;
+        rect.localScale = Vector2.one;
     }
 
     public void SpawnNewObject(string name, float score, float maxScore, GameObject Reference, Vector3 offset)
